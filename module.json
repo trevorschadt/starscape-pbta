@@ -1,81 +1,76 @@
 {
-    "id": "starscape-pbta",
-    "title": "Starscape (PbtA)",
-    "version": "1.0.0",
-    "compatibility":
-    {
-        "minimum": "12",
-        "verified": "12"
-    },
-    "relationships":
-    {
-        "systems":
-        [
-            {
-                "id": "pbta",
-                "type": "system",
-                "compatibility":
-                {}
-            }
-        ]
-    },
-    "esmodules":
-    [
-        "scripts/starscape.mjs",
-        "scripts/helpers/crash.mjs",
-        "scripts/helpers/advance.mjs"
+  "id": "starscape-pbta",
+  "title": "Starscape (PbtA)",
+  "version": "1.0.0",
+  "compatibility": {
+    "minimum": "12",
+    "verified": "12"
+  },
+  "relationships": {
+    "systems": [
+      {
+        "id": "pbta",
+        "type": "system",
+        "compatibility": {}
+      }
     ],
-    "styles":
-    [
-        "css/starscape.css"
-    ],
-    "packs":
-    [
-        {
-            "name": "starscape-moves",
-            "label": "Starscape Moves",
-            "path": "packs/starscape-moves",
-            "type": "Item",
-            "system": "pbta",
-            "ownership":
-            {
-                "PLAYER": "OBSERVER",
-                "ASSISTANT": "OWNER"
-            }
-        },
-        {
-            "name": "starscape-playbooks",
-            "label": "Starscape Playbooks",
-            "path": "packs/starscape-playbooks",
-            "type": "Item",
-            "system": "pbta",
-            "ownership":
-            {
-                "PLAYER": "OBSERVER",
-                "ASSISTANT": "OWNER"
-            }
-        },
-        {
-            "name": "starscape-macros",
-            "label": "Starscape Macros",
-            "path": "packs/starscape-macros",
-            "type": "Macro",
-            "system": "pbta",
-            "ownership":
-            {
-                "PLAYER": "OBSERVER",
-                "ASSISTANT": "OWNER"
-            }
-        }
-    ],
-    "authors":
-    [
-        {
-            "name": "Vitruvian Meeple",
-            "email": "vitruvianmeeple@gmail.com",
-            "discord": "vitruvianmeeple",
-            "flags":
-            {}
-        }
+    "requires": [
+      {
+        "id": "game-icons-net",
+        "type": "module",
+        "compatibility": {}
+      }
     ]
+  },
+  "esmodules": [
+    "scripts/starscape.mjs",
+    "scripts/helpers/crash.mjs",
+    "scripts/helpers/advance.mjs"
+  ],
+  "styles": [
+    "css/starscape.css"
+  ],
+  "packs": [
+    {
+      "name": "starscape-moves",
+      "label": "Starscape Moves",
+      "path": "packs/starscape-moves",
+      "type": "Item",
+      "system": "pbta",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "starscape-playbooks",
+      "label": "Starscape Playbooks",
+      "path": "packs/starscape-playbooks",
+      "type": "Item",
+      "system": "pbta",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    },
+    {
+      "name": "starscape-macros",
+      "label": "Starscape Macros",
+      "path": "packs/starscape-macros",
+      "type": "Macro",
+      "system": "pbta",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    }
+  ],
+  "authors": [
+    {
+      "name": "Vitruvian Meeple",
+      "email": "vitruvianmeeple@gmail.com",
+      "discord": "vitruvianmeeple",
+      "flags": {}
+    }
+  ]
 }
