@@ -1,0 +1,3 @@
+li.stat.flexrow:has(> label[data-label$="[Crashed]"]) {
+	background: #800000 !important;
+}
