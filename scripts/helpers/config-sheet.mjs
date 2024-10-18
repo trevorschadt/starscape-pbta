@@ -406,8 +406,8 @@ export const configSheet = async () => {
             },
             npc: {
                 attributes: {
-                    type: {
-                        label: game.i18n.localize("RoB.NPCSheets.attr.type.label"),
+                    conditions: {
+                        label: "Conditions",
                         description: null,
                         customLabel: false,
                         userLabel: false,
@@ -415,20 +415,18 @@ export const configSheet = async () => {
                         type: "ListMany",
                         condition: false,
                         options: {
-                            0: {
-                                label: game.i18n.localize("RoB.NPCSheets.attr.type.options.0"),
-                                value: false
-                            },
-                            1: {
-                                label: game.i18n.localize("RoB.NPCSheets.attr.type.options.1"),
-                                value: false
-                            }
+                            0: { label: "Text", value: false },
+                            1: { label: "Text", value: false },
+                            2: { label: "Text", value: false },
+                            3: { label: "Text", value: false },
+                            4: { label: "Text", value: false },
+                            5: { label: "Text", value: false },
                         }
                     }
                 },
                 moveTypes: {
                     reactions: {
-                        label: game.i18n.localize("RoB.NPCSheets.moveTypes.reactions"),
+                        label: "Reactions",
                         moves: []
                     }
                 }
