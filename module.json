@@ -81,6 +81,17 @@
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
       }
+    },
+    {
+      "name": "starscape-rollable-tables",
+      "label": "Starscape Rollable Tables",
+      "path": "packs/starscape-rollable-tables",
+      "type": "RollTable",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "system": "pbta"
     }
   ],
   "authors": [

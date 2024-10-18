@@ -1,12 +1,15 @@
 import { configSheet } from "./helpers/config-sheet.mjs";
+import { SSActorSheetMixin } from './sheets/actor-sheet.mjs';
 
-Hooks.once("init", () => {
-    console.log("init");
-    ActorSheet.defaultOptions.width = 980;
-});
 // Override sheetConfig with Starscape sheet (TOML).
 Hooks.once('pbtaSheetConfig', () => {
-  
+    const ssActorSheet = SSActorSheetMixin(game.pbta.applications.actor.PbtaActorSheet);
+    Actors.unregisterSheet('pbta', game.pbta.applications.actor.PbtaActorSheet, { types: ['character', 'other'] });
+    Actors.registerSheet('pbta', ssActorSheet, {
+        types: ['character', 'other'],
+        makeDefault: true,
+        label: 'Starscape Character Sheet',
+    });
 
     // Disable the PbtA sheet config form.
     if (game.settings.settings.get('pbta.sheetConfigOverride')) game.settings.set('pbta', 'sheetConfigOverride', true);
