@@ -20,6 +20,13 @@
         "type": "module",
         "compatibility": {}
       }
+    ],
+    "recommends": [
+      {
+        "id": "rolltable-from-sidebar",
+        "type": "module",
+        "compatibility": {}
+      }
     ]
   },
   "esmodules": [
@@ -69,11 +76,11 @@
       "label": "GM Moves",
       "path": "packs/gm-moves",
       "type": "JournalEntry",
+      "system": "pbta",
       "ownership": {
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
-      },
-      "system": "pbta"
+      }
     }
   ],
   "authors": [
