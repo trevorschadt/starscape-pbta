@@ -63,6 +63,17 @@
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
       }
+    },
+    {
+      "name": "gm-moves",
+      "label": "GM Moves",
+      "path": "packs/gm-moves",
+      "type": "JournalEntry",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "system": "pbta"
     }
   ],
   "authors": [
