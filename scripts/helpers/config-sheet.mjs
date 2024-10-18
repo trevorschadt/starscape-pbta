@@ -222,8 +222,7 @@ export const configSheet = async () => {
                                 value: false,
                                 values: {
                                     0: { value: false },
-                                    1: { value: false },
-                                    2: { value: false, advancements: 5 },
+                                    1: { value: false, advancements: 5 },
                                 }
                             },
                             1: {
@@ -256,7 +255,6 @@ export const configSheet = async () => {
                                 advancements: 5,
                                 values: {
                                     0: { value: false },
-                                    1: { value: false, advancements: 10 },
                                 }
                             },
                             5: {
@@ -270,6 +268,14 @@ export const configSheet = async () => {
                                 }
                             },
                             6: {
+                                label: "Change a Seeing Red trigger",
+                                value: false, 
+                                advancements: 5,
+                                values: {
+                                    0: { value: false },
+                                }
+                            },
+                            7: {
                                 label: "Take a Move from any Playbook",
                                 value: false, 
                                 advancements: 10,
@@ -278,7 +284,7 @@ export const configSheet = async () => {
                                     1: { value: false, advancements: 15 },
                                 }
                             },
-                            7: {
+                            8: {
                                 label: "Remove a Seeing Red trigger",
                                 value: false, 
                                 advancements: 10,
@@ -286,7 +292,7 @@ export const configSheet = async () => {
                                     0: { value: false },
                                 }
                             },
-                            7: {
+                            9: {
                                 label: "Take a Specialty from any Background",
                                 value: false, 
                                 advancements: 10,
@@ -294,26 +300,10 @@ export const configSheet = async () => {
                                     0: { value: false },
                                 }
                             },
-                            8: {
-                                label: "Reset your Stellar Move",
+                            10: {
+                                label: "Take the Skill you crossed off",
                                 value: false, 
                                 advancements: 10,
-                                values: {
-                                    0: { value: false },
-                                }
-                            },
-                            9: {
-                                label: "Mark an Upgrade for the ship",
-                                value: false, 
-                                advancements: 15,
-                                values: {
-                                    0: { value: false },
-                                }
-                            },
-                            10: {
-                                label: "Take any Specialty from the master list",
-                                value: false, 
-                                advancements: 15,
                                 values: {
                                     0: { value: false },
                                 }
@@ -321,12 +311,28 @@ export const configSheet = async () => {
                             11: {
                                 label: "Change Playbooks",
                                 value: false, 
-                                advancements: 15,
+                                advancements: 10,
                                 values: {
                                     0: { value: false },
                                 }
                             },
                             12: {
+                                label: "Mark an Upgrade for the ship",
+                                value: false, 
+                                advancements: 15,
+                                values: {
+                                    0: { value: false },
+                                }
+                            },
+                            13: {
+                                label: "Take any Specialty from the master list",
+                                value: false, 
+                                advancements: 15,
+                                values: {
+                                    0: { value: false },
+                                }
+                            },
+                            14: {
                                 label: "Add Idolized as a new Trust level (6)",
                                 value: false, 
                                 advancements: 15,
