@@ -1,0 +1,86 @@
+<div class="cell cell--stats">
+	<ol class="stats-list flexrow">
+		{{#each system.stats as |stat key|}}
+
+		<li class="stat flexcol" data-stat="{{key}}">
+				<div class="flexcol">
+			<label
+				for="system.stats.{{key}}.value"
+				class="cell__title stat-rollable rollable"
+				data-mod="{{stat.value}}"
+				data-label="{{stat.label}}"
+				>
+				<span class="stat-icon">
+					<i class="fas fa-dice-d6"></i>
+				</span>
+				{{ stat.label }}
+			</label>
+			{{#if (and (eq key "token") ../statToken)}}
+			<span class="token-modif" data-action="decrease" data-attr="stats.{{key}}.value">-</span>
+			<input
+				class="stat-value {{#if (eq stat.value ../statToken.max)}}max{{/if}}"
+				type="text"
+				name="system.stats.{{key}}.value"
+				value="{{stat.value}}"
+				data-dtype="Number"
+				min={{statToggle.min}}
+				max="{{statToggle.max}}"
+				disabled />
+			<span class="token-modif" data-action="increase" data-attr="stats.{{key}}.value">+</span>
+			{{else}}
+				{{#if ../statToggle}}
+				<label class="stat-toggle checkbox"><input type="checkbox" name="system.stats.{{key}}.toggle" {{checked stat.toggle}}/>
+					{{../statToggle.label}}
+				</label>
+				{{/if}}
+				{{#if ../statClock}}
+				<div class="cell__clock flexrow">
+					{{#times stat.steps.max}}
+					<input type="radio" class="stat-clock" data-name="system.stats.{{key}}" data-step="{{@index}}" {{checked (gt stat.steps.value @index)}}>
+					{{/times}}
+				</div>
+				{{/if}}
+				<input
+					class="stat-value"
+					type="text"
+					name="system.stats.{{key}}.value"
+					value="{{#if stat.value includeZero=true}}{{numberFormat stat.value decimals=0 sign=true}}{{/if}}"
+					data-dtype="Number"
+					/>
+			{{/if}}
+				</div>
+			{{#each stat.conditions as |cond cond-key|}}
+			<div class="flexcol">
+				<label>
+				<input
+					type="checkbox"
+					name="system.stats.{{key}}.conditions.{{cond-key}}.value"
+					{{ checked cond.value }}>
+				{{cond.label}}
+				</label>
+			</div>
+			{{/each}}
+		</li>
+		{{/each}}
+		{{#if (and editable (objLen system.stats) statShifting)}}
+		<li class="stat stat-shift flexrow" data-stat="{{key}}">
+			<label class="cell__title stat-rollable">
+				{{#if statShifting.img}}
+				<span class="stat-icon">
+					<img src="{{statShifting.img}}" />
+				</span>
+				{{/if}}
+				{{ statShifting.label }}
+			</label>
+			<div class="select-holder flexrow">
+				<select class="up">
+					{{selectOptions statShifting.stats selected=statShifting.up labelAttr="label" blank="" sort=true }}
+				</select>
+				<select class="down">
+					{{selectOptions statShifting.stats selected=statShifting.down labelAttr="label" blank="" sort=true }}
+				</select>
+			</div>
+		</li>
+		{{/if}}
+	</ol>
+</div>

@@ -25,79 +25,49 @@ export const configSheet = async () => {
             character: {
                 stats: {
                     body: {
-                        label: game.i18n.localize("Starscape.CharacterSheets.stats.body.label"),
+                        label: "Body", // game.i18n.localize("RoB.CharacterSheets.stats.body"),
                         crashed: false,
                         value: 0,
                         conditions: {
-                            0: {
-                                label: game.i18n.localize("Starscape.CharacterSheets.stats.body.conditions.guilty"),
-                                value: 0
-                            },
-                            1: {
-                                label: game.i18n.localize("Starscape.CharacterSheets.stats.body.conditions.selfish"),
-                                value: 0
-                            },
-                        }
+                            0: { label: "Guilty", value: false},
+                            1: { label: "Selfish", value: false},
+                        }   
                     },
                     brains: {
-                        label: game.i18n.localize("Starscape.CharacterSheets.stats.brains.label"),
+                        label: "Brains", // game.i18n.localize("RoB.CharacterSheets.stats.glass"),
                         crashed: false,
                         value: 0,
                         conditions: {
-                            0: {
-                                label: game.i18n.localize("Starscape.CharacterSheets.stats.brains.conditions.angry"),
-                                value: 0
-                            },
-                            1: {
-                                label: game.i18n.localize("Starscape.CharacterSheets.stats.brains.conditions.reckless"),
-                                value: 0
-                            },
-                        }
+                            0: { label: "Angry", value: false},
+                            1: { label: "Reckless", value: false},
+                        }   
                     },
                     courage: {
-                        label: game.i18n.localize("Starscape.CharacterSheets.stats.courage.label"),
+                        label: "Courage", // game.i18n.localize("RoB.CharacterSheets.stats.sulphur"),
                         crashed: false,
                         value: 0,
                         conditions: {
-                            0: {
-                                label: game.i18n.localize("Starscape.CharacterSheets.stats.courage.conditions.afraid"),
-                                value: 0
-                            },
-                            1: {
-                                label: game.i18n.localize("Starscape.CharacterSheets.stats.courage.conditions.hopeless"),
-                                value: 0
-                            },
-                        }
+                            0: { label: "Afraid", value: false},
+                            1: { label: "Hopeless", value: false},
+                        }   
                     },
                     heart: {
-                        label: game.i18n.localize("Starscape.CharacterSheets.stats.heart.label"),
+                        label: "Heart", // game.i18n.localize("RoB.CharacterSheets.stats.mercury"),
                         crashed: false,
                         value: 0,
                         conditions: {
-                            0: {
-                                label: game.i18n.localize("Starscape.CharacterSheets.stats.heart.conditions.depressed"),
-                                value: 0
-                            },
-                            1: {
-                                label: game.i18n.localize("Starscape.CharacterSheets.stats.heart.conditions.resentful"),
-                                value: 0
-                            },
-                        }
+                            0: { label: "Depressed", value: false},
+                            1: { label: "Resentful", value: false},
+                        }   
                     },
                     savvy: {
-                        label: game.i18n.localize("Starscape.CharacterSheets.stats.savvy.label"),
+                        label: "Savvy", // game.i18n.localize("RoB.CharacterSheets.stats.mercury"),
                         crashed: false,
                         value: 0,
                         conditions: {
-                            0: {
-                                label: game.i18n.localize("Starscape.CharacterSheets.stats.savvy.conditions.frustrated"),
-                                value: 0
-                            },
-                            1: {
-                                label: game.i18n.localize("Starscape.CharacterSheets.stats.savvy.conditions.insecure"),
-                                value: 0
-                            },
-                        }
+                            0: { label: "Frustrated", value: false},
+                            1: { label: "Insecure", value: false},
+                        }   
                     }
                 },
                 attributes: {
@@ -178,11 +148,12 @@ export const configSheet = async () => {
                         userLabel: false,
                         options: {
                             0: {
-                                label: "Take a new Skill from your Background",
+                                label: "Take a Specialty from your Background",
                                 value: false,
                                 values: {
                                     0: { value: false },
-                                    1: { value: false, advancements: 5 },
+                                    1: { value: false },
+                                    2: { value: false, advancements: 5 },
                                 }
                             },
                             1: {
@@ -223,19 +194,9 @@ export const configSheet = async () => {
                                 advancements: 5,
                                 values: {
                                     0: { value: false },
-                                    1: { value: false, advancements: 10 },
-                                    2: { value: false, advancements: 15 },
                                 }
                             },
                             6: {
-                                label: "Change a Seeing Red trigger",
-                                value: false, 
-                                advancements: 5,
-                                values: {
-                                    0: { value: false },
-                                }
-                            },
-                            7: {
                                 label: "Take a Move from any Playbook",
                                 value: false, 
                                 advancements: 10,
@@ -244,7 +205,7 @@ export const configSheet = async () => {
                                     1: { value: false, advancements: 15 },
                                 }
                             },
-                            8: {
+                            7: {
                                 label: "Remove a Seeing Red trigger",
                                 value: false, 
                                 advancements: 10,
@@ -252,8 +213,16 @@ export const configSheet = async () => {
                                     0: { value: false },
                                 }
                             },
+                            8: {
+                                label: "Mark four Investments for the ship",
+                                value: false, 
+                                advancements: 10,
+                                values: {
+                                    0: { value: false },
+                                }
+                            },
                             9: {
-                                label: "Take a Specialty from any Background",
+                                label: "Take a Specialty from another Background",
                                 value: false, 
                                 advancements: 10,
                                 values: {
@@ -261,7 +230,7 @@ export const configSheet = async () => {
                                 }
                             },
                             10: {
-                                label: "Take the Skill you crossed off",
+                                label: "Choose another Ship Customization",
                                 value: false, 
                                 advancements: 10,
                                 values: {
@@ -269,7 +238,7 @@ export const configSheet = async () => {
                                 }
                             },
                             11: {
-                                label: "Change Playbooks",
+                                label: "Reset your Stellar Move",
                                 value: false, 
                                 advancements: 10,
                                 values: {
@@ -294,6 +263,14 @@ export const configSheet = async () => {
                             },
                             14: {
                                 label: "Add Idolized as a new Trust level (6)",
+                                value: false, 
+                                advancements: 15,
+                                values: {
+                                    0: { value: false },
+                                }
+                            },
+                            15: {
+                                label: "Change Playbooks",
                                 value: false, 
                                 advancements: 15,
                                 values: {

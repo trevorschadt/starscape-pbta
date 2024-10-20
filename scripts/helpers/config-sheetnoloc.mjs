@@ -8,99 +8,139 @@ export const configSheet = async () => {
             failure: {
                 start: null,
                 end: 6,
-                label: game.i18n.localize("Starscape.CharacterSheets.rollResults.complications")
+                label: "Complications..." // game.i18n.localize("RoB.CharacterSheets.rollResults.complications")
             },
             partial: {
                 start: 7,
                 end: 9,
-                label: game.i18n.localize("Starscape.CharacterSheets.rollResults.partial")
+                label: "Partial success" // game.i18n.localize("RoB.CharacterSheets.rollResults.partial")
             },
             success: {
                 start: 10,
                 end: null,
-                label: game.i18n.localize("Starscape.CharacterSheets.rollResults.success")
+                label: "Success!" // game.i18n.localize("RoB.CharacterSheets.rollResults.success")
             }
         },
         actorTypes: {
             character: {
                 stats: {
                     body: {
-                        label: game.i18n.localize("Starscape.CharacterSheets.stats.body.label"),
+                        label: "Body", // game.i18n.localize("RoB.CharacterSheets.stats.body"),
                         crashed: false,
-                        value: 0,
-                        conditions: {
-                            0: {
-                                label: game.i18n.localize("Starscape.CharacterSheets.stats.body.conditions.guilty"),
-                                value: 0
-                            },
-                            1: {
-                                label: game.i18n.localize("Starscape.CharacterSheets.stats.body.conditions.selfish"),
-                                value: 0
-                            },
-                        }
+                        value: 0
                     },
                     brains: {
-                        label: game.i18n.localize("Starscape.CharacterSheets.stats.brains.label"),
+                        label: "Brains", // game.i18n.localize("RoB.CharacterSheets.stats.glass"),
                         crashed: false,
-                        value: 0,
-                        conditions: {
-                            0: {
-                                label: game.i18n.localize("Starscape.CharacterSheets.stats.brains.conditions.angry"),
-                                value: 0
-                            },
-                            1: {
-                                label: game.i18n.localize("Starscape.CharacterSheets.stats.brains.conditions.reckless"),
-                                value: 0
-                            },
-                        }
+                        value: 0
                     },
                     courage: {
-                        label: game.i18n.localize("Starscape.CharacterSheets.stats.courage.label"),
+                        label: "Courage", // game.i18n.localize("RoB.CharacterSheets.stats.sulphur"),
                         crashed: false,
-                        value: 0,
-                        conditions: {
-                            0: {
-                                label: game.i18n.localize("Starscape.CharacterSheets.stats.courage.conditions.afraid"),
-                                value: 0
-                            },
-                            1: {
-                                label: game.i18n.localize("Starscape.CharacterSheets.stats.courage.conditions.hopeless"),
-                                value: 0
-                            },
-                        }
+                        value: 0
                     },
                     heart: {
-                        label: game.i18n.localize("Starscape.CharacterSheets.stats.heart.label"),
+                        label: "Heart", // game.i18n.localize("RoB.CharacterSheets.stats.mercury"),
                         crashed: false,
-                        value: 0,
-                        conditions: {
-                            0: {
-                                label: game.i18n.localize("Starscape.CharacterSheets.stats.heart.conditions.depressed"),
-                                value: 0
-                            },
-                            1: {
-                                label: game.i18n.localize("Starscape.CharacterSheets.stats.heart.conditions.resentful"),
-                                value: 0
-                            },
-                        }
+                        value: 0
                     },
                     savvy: {
-                        label: game.i18n.localize("Starscape.CharacterSheets.stats.savvy.label"),
+                        label: "Savvy", // game.i18n.localize("RoB.CharacterSheets.stats.mercury"),
                         crashed: false,
-                        value: 0,
-                        conditions: {
-                            0: {
-                                label: game.i18n.localize("Starscape.CharacterSheets.stats.savvy.conditions.frustrated"),
-                                value: 0
-                            },
-                            1: {
-                                label: game.i18n.localize("Starscape.CharacterSheets.stats.savvy.conditions.insecure"),
-                                value: 0
-                            },
-                        }
+                        value: 0
                     }
                 },
                 attributes: {
+                    bodyConditions: {
+                        label: "Body Conditions",
+                        description: "Crashed if both are checked",
+                        customLabel: false,
+                        userLabel: false,
+                        position: "Top",
+                        type: "ListMany",
+                        options: {
+                            0: {
+                                label: "Disdainful", // game.i18n.localize("RoB.CharacterSheets.attr.wounds.options.0"),
+                                value: false
+                            },
+                            1: {
+                                label: "Selfish", // game.i18n.localize("RoB.CharacterSheets.attr.wounds.options.1"),
+                                value: false
+                            }
+                        }
+                    },
+                    brainsConditions: {
+                        label: "Brains Conditions",
+                        description: "Crashed if both are checked",
+                        customLabel: false,
+                        userLabel: false,
+                        position: "Top",
+                        type: "ListMany",
+                        options: {
+                            0: {
+                                label: "Angry", // game.i18n.localize("RoB.CharacterSheets.attr.wounds.options.0"),
+                                value: false
+                            },
+                            1: {
+                                label: "Insecure", // game.i18n.localize("RoB.CharacterSheets.attr.wounds.options.1"),
+                                value: false
+                            }
+                        }
+                    },
+                    courageConditions: {
+                        label: "Courage Conditions",
+                        description: "Crashed if both are checked",
+                        customLabel: false,
+                        userLabel: false,
+                        position: "Top",
+                        type: "ListMany",
+                        options: {
+                            0: {
+                                label: "Afraid", // game.i18n.localize("RoB.CharacterSheets.attr.wounds.options.0"),
+                                value: false
+                            },
+                            1: {
+                                label: "Disillusioned", // game.i18n.localize("RoB.CharacterSheets.attr.wounds.options.1"),
+                                value: false
+                            }
+                        }
+                    },
+                    heartConditions: {
+                        label: "Heart Conditions",
+                        description: "Crashed if both are checked",
+                        customLabel: false,
+                        userLabel: false,
+                        position: "Top",
+                        type: "ListMany",
+                        options: {
+                            0: {
+                                label: "Hopeless", // game.i18n.localize("RoB.CharacterSheets.attr.wounds.options.0"),
+                                value: false
+                            },
+                            1: {
+                                label: "Resentful", // game.i18n.localize("RoB.CharacterSheets.attr.wounds.options.1"),
+                                value: false
+                            }
+                        }
+                    },
+                    savvyConditions: {
+                        label: "Savvy Conditions",
+                        description: "Crashed if both are checked",
+                        customLabel: false,
+                        userLabel: false,
+                        position: "Top",
+                        type: "ListMany",
+                        options: {
+                            0: {
+                                label: "Guilty", // game.i18n.localize("RoB.CharacterSheets.attr.wounds.options.0"),
+                                value: false
+                            },
+                            1: {
+                                label: "Reckless", // game.i18n.localize("RoB.CharacterSheets.attr.wounds.options.1"),
+                                value: false
+                            }
+                        }
+                    },
                     xp: {
                         label: "XP",
                         description: "When you roll a miss, or when a move says to, mark XP. Mark an advance every time you fill up the bar.",

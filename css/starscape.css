@@ -1,3 +1,9 @@
-li.stat.flexrow:has(> label[data-label$="[Crashed]"]) {
-	background: #800000 !important;
+.starscape.sheet .sheet-attributes .cell--stats .stat {
+	flex-basis: 19%;
+}
+.starscape.sheet .sheet-attributes .cell--stats .stat.crashed {
+	background: #800000;
+}
+.starscape.sheet .sheet-attributes .cell--stats .stat.crashed:hover {
+	background: #aa6666;
 }

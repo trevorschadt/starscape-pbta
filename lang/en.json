@@ -1,0 +1,122 @@
+{
+    "Starscape":
+    {
+        "CharacterSheets":
+        {
+            "rollResults":
+            {
+                "complications": "Complications...",
+                "partial": "Partial Success",
+                "success": "Success!"
+            },
+            "stats":
+            {
+                "body":
+                {
+                    "label": "Body",
+                    "conditions":
+                    {
+                        "guilty": "Guilty",
+                        "selfish": "Selfish"
+                    }
+                },
+                "brains":
+                {
+                    "label": "Brains",
+                    "conditions":
+                    {
+                        "angry": "Angry",
+                        "reckless": "Reckless"
+                    }
+                },
+                "courage":
+                {
+                    "label": "Courage",
+                    "conditions":
+                    {
+                        "afraid": "Afraid",
+                        "hopeless": "Hopeless"
+                    }
+                },
+                "heart":
+                {
+                    "label": "Heart",
+                    "conditions":
+                    {
+                        "depressed": "Depressed",
+                        "resentful": "Resentful"
+                    }
+                },
+                "savvy":
+                {
+                    "label": "Savvy",
+                    "conditions":
+                    {
+                        "frustrated": "Frustrated",
+                        "insecure": "Insecure"
+                    }
+                }
+            },
+            "xp":
+            {
+                "label": "XP",
+                "description": "When you roll a miss, or when a move says to, mark XP. Mark an advance every time you fill up the bar."
+            },
+            "trust":
+            {
+                "label": "",
+                "levels":
+                {
+                    "0": "Distrusted (0)",
+                    "1": "Suspected (1)",
+                    "2": "Doubted (2)",
+                    "3": "Trusted (3)",
+                    "4": "Respected (4)",
+                    "5": "Esteemed (5)",
+                    "6": "Idolized (6)"
+                }
+            },
+            "skills":
+            {
+                "label": "Skills"
+            },
+            "advancements":
+            {
+                "label": "Advancements",
+                "specialtyFromYourBackground": "Take a Specialty from your Background",
+                "moveFromYourPlaybook": "Take another Move from your Playbook",
+                "addToStat": "Add +1 to a stat (max +2)",
+                "twoInvestments": "Mark two Investments for the ship",
+                "clearCondition": "Clear a permanent Condition",
+                "threeInvestments": "Mark three Investments for the ship",
+                "moveFromAnyPlaybook": "Take a Move from any Playbook",
+                "removeSeeingEyeTrigger": "Remove a Seeing Red trigger",
+                "fourInvestments": "Mark four Investments for the ship",
+                "specialtyFromAnotherBackground": "Take a Specialty from another Background",
+                "shipCustomization": "Choose another Ship Customization",
+                "resetStellarMove": "Reset your Stellar Move",
+                "shipUpgrade": "Mark an Upgrade for the ship",
+                "specialtyFromMasterList": "Take any Specialty from the master list",
+                "trust6": "Add Idolized as a new Trust level (6)",
+                "changePlaybooks": "Change Playbooks"
+            },
+            "details":
+            {
+                "summary": "Summary",
+                "background": "Background",
+                "backstory": "Backstory",
+                "shipCustomization": "Ship Customization",
+                "seeingRed": "Seeing Red",
+                "connections": "Connections"
+            }
+        },
+        "moveTypes":
+        {
+            "basic": "Basic Moves",
+            "class": "Class Moves",
+            "crew": "Crew Moves",
+            "advanced": "Advanced Moves",
+            "ship": "Ship Moves"
+        }
+    }
+}

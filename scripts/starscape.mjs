@@ -1,5 +1,10 @@
 import { configSheet } from "./helpers/config-sheet.mjs";
+import * as utils from "./helpers/utils.mjs";
 import { SSActorSheetMixin } from './sheets/actor-sheet.mjs';
+
+Hooks.once('init', () => {
+    utils.preloadHandlebarsTemplates();
+})
 
 // Override sheetConfig with Starscape sheet (TOML).
 Hooks.once('pbtaSheetConfig', () => {
