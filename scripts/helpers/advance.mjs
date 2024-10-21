@@ -28,6 +28,16 @@ Hooks.on('renderPbtaActorSheet', (sheet, selector, thing3) => {
             } else {
                 $(vSelector).show();
             }
-        })
+        });
     });
+    let t6text = game.i18n.localize("Starscape.CharacterSheets.trust.levels.6");
+    let t6adv = Object.keys(actor.system.attributes.advancements.options).filter((o) => actor.system.attributes.advancements.options[o].label == game.i18n.localize("Starscape.CharacterSheets.advancements.trust6"))
+    if (t6adv.length == 1) {
+        let t6selector = `.cell--trust label:contains(${t6text})`;
+        if (actor.system.attributes.advancements.options[t6adv[0]].value) {
+            $(t6selector).show();
+        } else {
+            $(t6selector).hide();
+        }
+    }
 });

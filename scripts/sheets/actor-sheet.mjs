@@ -11,5 +11,6 @@ export function SSActorSheetMixin(Base) {
 		get template() {
 			return 'modules/starscape-pbta/templates/actors/actor-sheet.hbs';
 		}
+
 	}
 }

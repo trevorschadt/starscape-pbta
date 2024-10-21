@@ -116,29 +116,33 @@ export const configSheet = async () => {
                         userLabel: false,
                         position: "Left",
                         type: "ListOne",
-                        value: 2,
+                        value: 3,
                         options: {
                             0: {
+                                label: game.i18n.localize("Starscape.CharacterSheets.trust.levels.6"),
+                                value: false,
+                            },
+                            1: {
                                 label: game.i18n.localize("Starscape.CharacterSheets.trust.levels.5"),
                                 value: false
                             },
-                            1: {
+                            2: {
                                 label: game.i18n.localize("Starscape.CharacterSheets.trust.levels.4"),
                                 value: false
                             },
-                            2: {
+                            3: {
                                 label: game.i18n.localize("Starscape.CharacterSheets.trust.levels.3"),
                                 value: true
                             },
-                            3: {
+                            4: {
                                 label: game.i18n.localize("Starscape.CharacterSheets.trust.levels.2"),
                                 value: false
                             },
-                            4: {
+                            5: {
                                 label: game.i18n.localize("Starscape.CharacterSheets.trust.levels.1"),
                                 value: false
                             },
-                            5: {
+                            6: {
                                 label: game.i18n.localize("Starscape.CharacterSheets.trust.levels.0"),
                                 value: false
                             },
@@ -309,39 +313,38 @@ export const configSheet = async () => {
                             },
                         }
                     }
-
                 },
                 details: {
                     playbookSummary: {
-                        label: "Summary",
+                        label: game.i18n.localize("Starscape.CharacterSheets.details.summary"),
                         value: "",
                         playbook: true
                     },
                     background: {
-                        label: "Background",
+                        label: game.i18n.localize("Starscape.CharacterSheets.details.background"),
                         value: "",
                         playbook: true
                     },
                     backstory: {
-                        label: "Backstory",
+                        label: game.i18n.localize("Starscape.CharacterSheets.details.backstory"),
                         value: "",
                         playbook: true
                     },
                     shipCustomization: {
-                        label: "Ship Customization",
+                        label: game.i18n.localize("Starscape.CharacterSheets.details.shipCustomization"),
                         value: "",
                         playbook: true
                     },
                     seeingRed: {
-                        label: "Seeing Red",
+                        label: game.i18n.localize("Starscape.CharacterSheets.details.seeingRed"),
                         value: "",
                         playbook: true
                     },
                     connections: {
-                        label: "Connections",
+                        label: game.i18n.localize("Starscape.CharacterSheets.details.connections"),
                         value: "",
                         playbook: true
-                    },
+                    }
                 },
                 moveTypes: {
                     basic: {
