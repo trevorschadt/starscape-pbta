@@ -348,23 +348,19 @@ export const configSheet = async () => {
                 },
                 moveTypes: {
                     basic: {
-                        label: "Basic Moves",
+                        label: game.i18n.localize("Starscape.moveTypes.character.basic"),
                         creation: true,
                         playbook: false,
                         moves: []
                     },
                     crew: {
-                        label: "Crew Moves",
+                        label: game.i18n.localize("Starscape.moveTypes.character.crew"),
                         creation: true,
                         playbook: false,
                         moves: []
                     },
                     class: {
-                        label: "Class Moves",
-                        moves: []
-                    },
-                    advanced: {
-                        label: "Advanced Moves",
+                        label: game.i18n.localize("Starscape.moveTypes.character.class"),
                         moves: []
                     },
                 },

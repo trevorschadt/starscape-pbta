@@ -112,11 +112,14 @@
         },
         "moveTypes":
         {
-            "basic": "Basic Moves",
-            "class": "Class Moves",
-            "crew": "Crew Moves",
-            "advanced": "Advanced Moves",
-            "ship": "Ship Moves"
+            "character":
+            {
+                "basic": "Basic Moves",
+                "class": "Class Moves",
+                "crew": "Crew Moves",
+                "advanced": "Advanced Moves",
+                "ship": "Ship Moves"
+            }
         }
     }
 }
