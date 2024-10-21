@@ -102,8 +102,8 @@ export const configSheet = async () => {
                 },
                 attributes: {
                     xp: {
-                        label: "XP",
-                        description: "When you roll a miss, or when a move says to, mark XP. Mark an advance every time you fill up the bar.",
+                        label: game.i18n.localize("Starscape.CharacterSheets.xp.label"),
+                        description: game.i18n.localize("Starscape.CharacterSheets.xp.description"),
                         customLabel: false,
                         userLabel: false,
                         position: "Left",
@@ -111,7 +111,7 @@ export const configSheet = async () => {
                         max: 5
                     },
                     trust: {
-                        label: "Trust",
+                        label: game.i18n.localize("Starscape.CharacterSheets.trust.label"),
                         customLabel: false,
                         userLabel: false,
                         position: "Left",
@@ -119,33 +119,33 @@ export const configSheet = async () => {
                         value: 2,
                         options: {
                             0: {
-                                label: "Esteemed (5)",
+                                label: game.i18n.localize("Starscape.CharacterSheets.trust.levels.5"),
                                 value: false
                             },
                             1: {
-                                label: "Respected (4)",
+                                label: game.i18n.localize("Starscape.CharacterSheets.trust.levels.4"),
                                 value: false
                             },
                             2: {
-                                label: "Trusted (3)",
+                                label: game.i18n.localize("Starscape.CharacterSheets.trust.levels.3"),
                                 value: true
                             },
                             3: {
-                                label: "Doubted (2)",
+                                label: game.i18n.localize("Starscape.CharacterSheets.trust.levels.2"),
                                 value: false
                             },
                             4: {
-                                label: "Suspected (1)",
+                                label: game.i18n.localize("Starscape.CharacterSheets.trust.levels.1"),
                                 value: false
                             },
                             5: {
-                                label: "Distrusted (0)",
+                                label: game.i18n.localize("Starscape.CharacterSheets.trust.levels.0"),
                                 value: false
                             },
                         }
                     },
                     skills: {
-                        label: "Skills",
+                        label: game.i18n.localize("Starscape.CharacterSheets.skills.label"),
                         customLabel: false,
                         userLabel: false,
                         position: "Left",
@@ -171,22 +171,23 @@ export const configSheet = async () => {
                         }
                     },
                     advancements: {
-                        label: "Advancements",
+                        label: game.i18n.localize("Starscape.CharacterSheets.advancements.label"),
                         type: "ListMany",
                         position: "Left",
                         customLabel: false,
                         userLabel: false,
                         options: {
                             0: {
-                                label: "Take a new Skill from your Background",
+                                label: game.i18n.localize("Starscape.CharacterSheets.advancements.specialtyFromYourBackground"),
                                 value: false,
                                 values: {
                                     0: { value: false },
-                                    1: { value: false, advancements: 5 },
+                                    1: { value: false },
+                                    2: { value: false, advancements: 5 },
                                 }
                             },
                             1: {
-                                label: "Take another Move from your Playbook",
+                                label: game.i18n.localize("Starscape.CharacterSheets.advancements.moveFromYourPlaybook"),
                                 value: false,
                                 values: {
                                     0: { value: false },
@@ -195,14 +196,14 @@ export const configSheet = async () => {
                                 }
                             },
                             2: {
-                                label: "Add +1 to a stat (max +2)",
+                                label: game.i18n.localize("Starscape.CharacterSheets.advancements.addToStat"),
                                 value: false,
                                 values: {
                                     0: { value: false },
                                 }
                             },
                             3: {
-                                label: "Mark two Investments for the ship",
+                                label: game.i18n.localize("Starscape.CharacterSheets.advancements.twoInvestments"),
                                 value: false,
                                 values: {
                                     0: { value: false },
@@ -210,7 +211,7 @@ export const configSheet = async () => {
                                 }
                             },
                             4: {
-                                label: "Clear a permanent Condition",
+                                label: game.i18n.localize("Starscape.CharacterSheets.advancements.clearCondition"),
                                 value: false, 
                                 advancements: 5,
                                 values: {
@@ -218,25 +219,15 @@ export const configSheet = async () => {
                                 }
                             },
                             5: {
-                                label: "Mark three Investments for the ship",
+                                label: game.i18n.localize("Starscape.CharacterSheets.advancements.threeInvestments"),
                                 value: false, 
                                 advancements: 5,
                                 values: {
-                                    0: { value: false },
-                                    1: { value: false, advancements: 10 },
-                                    2: { value: false, advancements: 15 },
+                                    0: { value: false }
                                 }
                             },
                             6: {
-                                label: "Change a Seeing Red trigger",
-                                value: false, 
-                                advancements: 5,
-                                values: {
-                                    0: { value: false },
-                                }
-                            },
-                            7: {
-                                label: "Take a Move from any Playbook",
+                                label: game.i18n.localize("Starscape.CharacterSheets.advancements.moveFromAnyPlaybook"),
                                 value: false, 
                                 advancements: 10,
                                 values: {
@@ -244,16 +235,24 @@ export const configSheet = async () => {
                                     1: { value: false, advancements: 15 },
                                 }
                             },
-                            8: {
-                                label: "Remove a Seeing Red trigger",
+                            7: {
+                                label: game.i18n.localize("Starscape.CharacterSheets.advancements.removeSeeingRedTrigger"),
                                 value: false, 
                                 advancements: 10,
                                 values: {
                                     0: { value: false },
                                 }
                             },
+                            8: {
+                                label: game.i18n.localize("Starscape.CharacterSheets.advancements.fourInvestments"),
+                                value: false, 
+                                advancements: 10,
+                                values: {
+                                    0: { value: false }
+                                }
+                            },
                             9: {
-                                label: "Take a Specialty from any Background",
+                                label: game.i18n.localize("Starscape.CharacterSheets.advancements.specialtyFromAnotherBackground"),
                                 value: false, 
                                 advancements: 10,
                                 values: {
@@ -261,7 +260,7 @@ export const configSheet = async () => {
                                 }
                             },
                             10: {
-                                label: "Take the Skill you crossed off",
+                                label: game.i18n.localize("Starscape.CharacterSheets.advancements.shipCustomization"),
                                 value: false, 
                                 advancements: 10,
                                 values: {
@@ -269,7 +268,7 @@ export const configSheet = async () => {
                                 }
                             },
                             11: {
-                                label: "Change Playbooks",
+                                label: game.i18n.localize("Starscape.CharacterSheets.advancements.resetStellarMove"),
                                 value: false, 
                                 advancements: 10,
                                 values: {
@@ -277,7 +276,7 @@ export const configSheet = async () => {
                                 }
                             },
                             12: {
-                                label: "Mark an Upgrade for the ship",
+                                label: game.i18n.localize("Starscape.CharacterSheets.advancements.shipUpgrade"),
                                 value: false, 
                                 advancements: 15,
                                 values: {
@@ -285,7 +284,7 @@ export const configSheet = async () => {
                                 }
                             },
                             13: {
-                                label: "Take any Specialty from the master list",
+                                label: game.i18n.localize("Starscape.CharacterSheets.advancements.specialtyFromMasterList"),
                                 value: false, 
                                 advancements: 15,
                                 values: {
@@ -293,7 +292,15 @@ export const configSheet = async () => {
                                 }
                             },
                             14: {
-                                label: "Add Idolized as a new Trust level (6)",
+                                label: game.i18n.localize("Starscape.CharacterSheets.advancements.changePlaybooks"),
+                                value: false, 
+                                advancements: 15,
+                                values: {
+                                    0: { value: false },
+                                }
+                            },
+                            15: {
+                                label: game.i18n.localize("Starscape.CharacterSheets.advancements.trust6"),
                                 value: false, 
                                 advancements: 15,
                                 values: {

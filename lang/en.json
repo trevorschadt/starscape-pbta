@@ -90,15 +90,15 @@
                 "clearCondition": "Clear a permanent Condition",
                 "threeInvestments": "Mark three Investments for the ship",
                 "moveFromAnyPlaybook": "Take a Move from any Playbook",
-                "removeSeeingEyeTrigger": "Remove a Seeing Red trigger",
+                "removeSeeingRedTrigger": "Remove a Seeing Red trigger",
                 "fourInvestments": "Mark four Investments for the ship",
                 "specialtyFromAnotherBackground": "Take a Specialty from another Background",
                 "shipCustomization": "Choose another Ship Customization",
                 "resetStellarMove": "Reset your Stellar Move",
                 "shipUpgrade": "Mark an Upgrade for the ship",
                 "specialtyFromMasterList": "Take any Specialty from the master list",
-                "trust6": "Add Idolized as a new Trust level (6)",
-                "changePlaybooks": "Change Playbooks"
+                "changePlaybooks": "Change Playbooks",
+                "trust6": "Add Idolized as a new Trust level (6)"
             },
             "details":
             {
