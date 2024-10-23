@@ -55,6 +55,16 @@
     [
         "css/starscape.css"
     ],
+    "documentTypes":
+    {
+        "Item":
+        {
+            "background":
+            {},
+            "skill":
+            {}
+        }
+    },
     "packs":
     [
         {

@@ -1,9 +1,15 @@
 import { configSheet } from "./helpers/config-sheet.mjs";
 import * as utils from "./helpers/utils.mjs";
 import { SSActorSheetMixin } from './sheets/actor-sheet.mjs';
+import { BackgroundData } from './documents/background.mjs';
+import { SkillData } from './documents/skill.mjs';
 
 Hooks.once('init', () => {
     utils.preloadHandlebarsTemplates();
+    Object.assign(CONFIG.Item.dataModels, {
+        "background": BackgroundData,
+        "skill": SkillData
+    });
 })
 
 // Override sheetConfig with Starscape sheet (TOML).
@@ -32,4 +38,5 @@ Hooks.once('pbtaSheetConfig', () => {
     if (isNewerVersion(game.system.version, '1.0.4')) {
         game.settings.set('pbta', 'hideHold', true);
     }
+
 });
