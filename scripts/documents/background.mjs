@@ -15,9 +15,3 @@ export function BackgroundDataMixin(Base) {
 		}
 	}
 }
-
-Hooks.on("updateItem", (document, changed, options, userId) => {
-	if (document.type !== "starscape-pbta.background") return;
-	if (!changed?.system?.bonusStat) return;
-	console.log("here")
-});

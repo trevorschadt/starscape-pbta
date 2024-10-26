@@ -370,9 +370,6 @@ export const configSheet = async () => {
                     },
                     loot: {
                         label: "Loot"
-                    },
-                    background: {
-                        label: "Background"
                     }
                 }
             },
