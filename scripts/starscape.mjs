@@ -1,16 +1,51 @@
 import { configSheet } from "./helpers/config-sheet.mjs";
 import * as utils from "./helpers/utils.mjs";
 import { SSActorSheetMixin } from './sheets/actor-sheet.mjs';
-import { BackgroundData } from './documents/background.mjs';
+import { BackgroundDataMixin } from './documents/background.mjs';
+import { BackgroundSheet } from './sheets/background-sheet.mjs';
 import { SkillData } from './documents/skill.mjs';
+
+class SSItem extends pbta.documents.ItemPbta {
+    static getDefaultArtwork(itemData) {
+        if (itemData.type === "starscape-pbta.background") {
+            return { img: "modules/game-icons-net/whitetransparent/backward-time.svg" };
+        }
+        // TODO: Skill, ship, ship type, etc.
+        return super.getDefaultArtwork(itemData);
+    }
+}
 
 Hooks.once('init', () => {
     utils.preloadHandlebarsTemplates();
+    CONFIG.Item.documentClass = SSItem;
+    const backgroundData = BackgroundDataMixin(pbta.dataModels.ItemData);
+    // const backgroundData = BackgroundDataMixin(pbta.documents.ItemPbta);
     Object.assign(CONFIG.Item.dataModels, {
-        "background": BackgroundData,
-        "skill": SkillData
+        "starscape-pbta.background": backgroundData
+    });
+    Items.unregisterSheet('pbta',game.pbta.applications.item.PbtaItemSheet, { types: ["starscape-pbta.background"]});
+    Items.registerSheet('starscape-pbta', BackgroundSheet, {
+        types: ['starscape-pbta.background'],
+        makeDefault: true,
+        label: "Background Sheet"
     });
 })
+
+Hooks.on('preCreateItem', (item, data, options, userId) => {
+    // TODO: Add custom Item Images.
+
+    if (item.parent && (item.parent?.type === "character" || item.parent?.type === "other") && item.type === "playbook") {
+        const defaultImg = "icons/svg/mystery-man.svg";
+        const assetPath = "modules/pbta-rhapsodyofblood/assets/";
+        const characterPath = `${assetPath}characters/`;
+        console.log('TEST -----------');
+        console.log(item.system.slug);
+        if (item.parent?.img === defaultImg || item.parent?.img.includes(assetPath)) {
+            item.parent.update({ img: `${characterPath}${item.system.slug}.webp` });
+        }
+    }
+});
+
 
 // Override sheetConfig with Starscape sheet (TOML).
 Hooks.once('pbtaSheetConfig', () => {
@@ -39,4 +74,6 @@ Hooks.once('pbtaSheetConfig', () => {
         game.settings.set('pbta', 'hideHold', true);
     }
 
+
 });
+

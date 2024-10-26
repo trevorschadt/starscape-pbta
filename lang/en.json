@@ -1,4 +1,6 @@
 {
+    "TYPES.Item.starscape-pbta.background": "Background",
+    "TYPES.Item.starscape-pbta.skill": "Skill",
     "Starscape":
     {
         "CharacterSheets":
@@ -119,6 +121,19 @@
                 "crew": "Crew Moves",
                 "advanced": "Advanced Moves",
                 "ship": "Ship Moves"
+            }
+        },
+        "item":
+        {
+            "background":
+            {
+                "description": "A more focused history of a character's playbook",
+                "attributes":
+                {
+                    "bonusStat": "Bonus to Stat:",
+                    "choicePrompt": "Choice Prompt",
+                    "choice": "Choices"
+                }
             }
         }
     }

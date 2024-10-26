@@ -1,0 +1,32 @@
+
+
+<form class='{{cssClass}} item-form flexcol' autocomplete='off'>
+  <header class="sheet-header flexrow">
+      <div class="cell--image">
+        <img class="profile-img" src="{{item.img}}" data-edit="img" />
+      </div>
+      <div class="header-fields">
+          <h3>{{localize "RoB.item.covenant.description"}}</h3>
+          <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="{{localize "PBTA.Common.Name"}}"/></h1>
+      </div>
+  </header>
+  {{! Sheet Body }}
+  <section class='sheet-body'>
+    <div class="form-group">
+      <label>{{localize "RoB.item.covenant.explorerName"}}</label>
+      <input type="text" name="system.explorerName" value="{{system.explorerName}}" data-dtype="String"/>
+    </div>
+    <div class="form-group">
+      <label>{{localize "RoB.item.covenant.ratingLabel"}}</label>
+      <input type="text" name="system.rating" value="{{system.rating}}" data-dtype="Number"/>
+    </div>
+    <div class="form-group-stacked">
+      <label>{{localize "RoB.item.covenant.strengthenLabel"}}</label>
+      <textarea name="system.strengthen" data-dtype="String">{{system.strengthen}}</textarea>
+    </div>
+    <div class="form-group-stacked">
+      <label>{{localize "RoB.item.covenant.weakenLabel"}}</label>
+      <textarea name="system.weaken" data-dtype="String">{{system.weaken}}</textarea>
+    </div>
+  </section>
+</form>
