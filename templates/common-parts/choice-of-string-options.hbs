@@ -1,0 +1,5 @@
+{{#each this.options}}
+  <label><input type="radio" name="{{../attrPath}}" value="{{@index}}" {{checked (eq ../this.value @index)}}>
+    {{this}}
+  </label>
+{{/each}}

@@ -1,0 +1,42 @@
+<div class="tab description" data-group="primary" data-tab="description">
+	<div class="sheet-tab">
+		{{#if playbook}}
+		<div class="flexrow">
+		<div class="flexcol">
+			<div class="flex-0">
+				{{> "modules/starscape-pbta/templates/actors/parts/actor-history.hbs" }}
+			</div>
+			<div class="flex-0">
+			{{> "modules/starscape-pbta/templates/actors/parts/actor-background.hbs" }}
+			</div>
+			<div class="flex-0">
+			{{> "modules/starscape-pbta/templates/actors/parts/actor-ship-customization.hbs" }}
+			</div>
+			<div class="flex-0">
+			{{> "modules/starscape-pbta/templates/actors/parts/actor-seeing-red.hbs" }}
+			</div>
+		</div>
+		<div class="flexcol">
+			<div class="flex-0">
+			{{> "modules/starscape-pbta/templates/actors/parts/actor-backstory.hbs" }}
+			</div>
+			<div class="flex-0">
+			{{> "modules/starscape-pbta/templates/actors/parts/actor-connections.hbs" }}
+			</div>
+			<div class="flex-0">
+			{{> "modules/starscape-pbta/templates/actors/parts/actor-personal-directive.hbs" }}
+			</div>
+			<div class="flex-0">
+			{{> "modules/starscape-pbta/templates/actors/parts/actor-stellar-move.hbs" }}
+			</div>
+		</div>	
+		</div>	
+		{{else}}
+		<div class="flexrow">
+			{{localize 'Starscape.CharacterSheets.description.errors.needsPlaybook'}}
+		</div>
+
+
+		{{/if}} 
+	</div>
+</div>

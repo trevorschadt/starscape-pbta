@@ -1,0 +1,29 @@
+      <div class="sheet-block flexcol areas flex-0">
+        {{~> 'modules/starscape-pbta/templates/common-parts/sheet-block-label.hbs' label='Starscape.Ship.Attributes.Areas' ~}}
+        <div class="flexrow">
+          {{#each (splitArray system.attributes.areas 3)}}
+          <div class="flexcol">
+            {{#each this}}
+              <div class="flexrow area">
+              {{#if this.item}}
+                  <label data-action="toggle-ship-area" data-target="{{this.rootIndex}}">
+                    <input type="checkbox" {{checked this.item.selected}}>
+                    {{this.item.name}}
+                  </label>
+                  {{#if this.item.requiresCount}}
+                    <input type="number" data-target="{{this.rootIndex}}"" data-action="change-ship-area-count" value="{{#if this.item.selected}}{{this.item.count}}{{/if}}" {{disabled (not this.item.selected)}} />
+                  {{/if}}
+                {{else}}
+                  <label></label>  
+              {{/if}}
+              </div>
+            {{/each}}
+          </div>
+          {{/each}}
+        </div>
+        <div><hr /></div>
+        <div class="flexcol">
+          <div class="flexrow centered"><label>{{localize 'Starscape.Ship.Attributes.PlaybookShipCustomizations'}}</label></div>
+{{editor system.attributes.shipCustomizations target="system.attributes.shipCustomizations" button=true owner=owner editable=true engine="prosemirror" collaborate=false}}
+        </div>
+      </div>

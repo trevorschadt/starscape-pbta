@@ -1,0 +1,33 @@
+<header class="sheet-header">
+	{{#if (or isNPC limited)}}
+	<div class="cell cell--image">
+		<img class="profile-img" src="{{actor.img}}" data-edit="img" />
+	</div>
+	{{/if}}
+	<div class="sheet-header__fields flexrow">
+		<div class="cell cell--image">
+			<img class="profile-img" src="{{actor.img}}" data-edit="img" />
+		</div>
+		<div class="flexcol flex-4">
+			{{#if (and isCharacter (not limited))}}
+			<section class="sheet-character-info">
+				{{> "modules/starscape-pbta/templates/actors/parts/actor-character.hbs" }}
+			</section>
+			{{!-- Stats --}}
+			<div class="flexrow">
+				<section class="sheet-attributes flexrow flex-4">
+					{{> "modules/starscape-pbta/templates/actors/parts/actor-stats.hbs" }}
+				</section>
+				<section class="sheet-block sheet-specialties flexcol">
+					<div class="block-label">
+						<label>{{localize 'Starscape.item.skill.plural'}}</label>
+					</div>
+					{{#each specialties}}
+					<div class="specialty" title="{{this.system.description}}"><label>{{this.name}}</label></div>
+				{{/each}}
+				</section>
+			</div>
+	</div>
+		{{/if}}
+	</div>
+</header>

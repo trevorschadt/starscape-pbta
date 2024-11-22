@@ -1,0 +1,40 @@
+<div class="sheet-playbook">
+	<div class="flexrow">
+		<div class="view-playbook {{#if system.playbook.uuid}}active{{/if}}"
+			data-playbook="{{system.playbook.uuid}}"
+			data-tooltip="{{localize 'PBTA.ViewPlaybook'}}"
+			data-tooltip-direction="UP"
+		>
+			{{#if system.playbook.uuid}}
+			<i class="fas fa-eye"></i>
+			{{else}}
+			<i class="fas fa-eye-slash"></i>
+			{{/if}}
+		</div>
+		<select class="input--title charplaybook">
+		{{selectOptions playbooks selected=system.playbook.uuid valueAttr="uuid" labelAttr="name" blank=(localize "PBTA.Playbook") sort=true}}
+		</select>
+
+
+		{{#if system.playbook.uuid}}
+		<div class="view-background {{#if background.uuid}}active{{/if}}"
+			data-background="{{system.background.uuid}}"
+			data-tooltip="{{localize 'Starscape.ViewBackground'}}"
+			data-tooltip-direction="UP"
+		>
+			{{#if system.background.uuid}}
+			<i class="fas fa-eye"></i>
+			{{else}}
+			<i class="fas fa-eye-slash"></i>
+			{{/if}}
+		</div>
+		<select class="input--title charbackground">
+		{{selectOptions availableBackgrounds selected=system.background.uuid valueAttr="uuid" labelAttr="name" blank=(localize "TYPES.Item.starscape-pbta.background") sort=true}}
+		</select>
+
+		{{/if}}
+		{{> "modules/starscape-pbta/templates/actors/parts/actor-advancement.hbs" }}
+		</div>
+
+	<div class="flexrow playbook-summary">{{playbook.system.summary}}</div>
+</div>

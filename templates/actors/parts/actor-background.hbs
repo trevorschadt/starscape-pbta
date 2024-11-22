@@ -1,0 +1,37 @@
+<div class="sheet-block">
+	<div class="flexrow">
+		<label class="block-label">{{localize 'Starscape.CharacterSheets.details.sectionHeaders.background'}}</label>
+	</div>
+	{{#if background}}
+	<div class="flexrow">
+		<label>{{background.system.choicePrompt}}</label>
+	</div>
+	{{#each background.system.choices}}
+	<div class="flexrow">
+			{{#times ../background.system.numChoices}}
+		<input type='checkbox' data-action='toggle-background-choice' data-target='{{@../index}}-{{@index}}' {{checked (ifHasBackgroundChoice @../index @index ../../system.backgroundChoices)}} />
+		{{/times}}
+		{{this}}
+	</div>
+	{{/each}}
+	<div class="flexcol">
+		<label class="block-label">{{localize 'Starscape.item.skill.plural'}}</label>
+		<label>{{localize specialtyPrompt}}</label>
+	</div>
+	{{#each background.system.specialties.options}}
+	<div class="flexrow">
+		<label data-action="toggle-background-specialty" data-target="{{this.slug}}">
+		{{#if (eq this.slug ../background.system.specialties.value)}}
+			<input type='checkbox' checked disabled>
+		{{else}}
+			<input type='checkbox' {{checked (ifHasSkill this.slug ../specialties) }}>
+		{{/if}}
+		{{this.label}}
+		</label>
+	</div>
+	{{/each}}
+	{{else}}
+	<div class="flexrow">{{localize 'Starscape.CharacterSheets.description.errors.needsBackground'}}
+	</div>
+	{{/if}}
+</div>

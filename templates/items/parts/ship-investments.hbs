@@ -1,0 +1,43 @@
+  <div class="sheet-block flexcol investments">
+    {{~> 'modules/starscape-pbta/templates/common-parts/sheet-block-label.hbs' label='Starscape.Ship.Attributes.Investments.Label' ~}}
+    <div class="flexrow">
+      <div class="flexcol">
+        <div class="flexrow cell__checkboxes centered">
+          {{#times 5}}
+          <input type="radio" data-action="change-ship-investments" data-step="{{@index}}" {{checked (gt ../system.attributes.investments @index)}}>
+          {{/times}}
+        </div>
+        <div class="flexrow">
+          <div class="flex-1"></div>
+          <div class="flex-2">
+            <button class="dialog-button yes" data-button="yes" data-action="gain-ship-upgrade" {{disabled (lt system.attributes.investments 5)}}>
+              <i class="fa fa-arrow-up"></i>
+              {{localize 'Starscape.Ship.Attributes.Investments.GainAnUpgrade'}}
+            </button>
+          </div>
+          <div class="flex-1"></div>
+        </div>
+        <div class="flexrow">
+          <div class="flex-1"></div>
+          <div class="flex-2">
+            <button class="dialog-button" data-action="reset-ship-investments" {{disabled (eq system.attributes.investments 0)}}>
+              <i class="fa fa-rotate-left"></i>
+              {{localize 'Starscape.Ship.Attributes.Investments.ResetInvestments'}}
+            </button>
+          </div>
+          <div class="flex-1"></div>
+        </div>
+      </div>
+      <div>
+        <ul>
+          <li>{{localize "Starscape.Ship.Attributes.Investments.Instructions.MakeAnInvestmentWhen"}}
+          <li>{{localize "Starscape.Ship.Attributes.Investments.Instructions.SpendAnInvestmentToRepair"}}
+        </ul>
+      </div>
+      <div>
+        <ul>
+          <li>{{localize "Starscape.Ship.Attributes.Investments.Instructions.ChooseAnUpgradeWhen"}}
+        </ul>
+      </div>
+    </div>
+  </div>

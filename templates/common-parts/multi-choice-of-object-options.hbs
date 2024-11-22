@@ -1,0 +1,8 @@
+{{#each list}}
+<div>
+<label data-action="{{../action}}" data-target="{{@index}}">
+  <input type="checkbox" {{checked this.selected}} {{disabled this.required}}>
+  {{this.name}}
+</label>
+</div>
+{{/each}}

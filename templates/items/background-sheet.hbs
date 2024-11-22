@@ -1,0 +1,88 @@
+<form class='{{cssClass}} item-form flexcol' autocomplete='off'>
+  <header class="sheet-header flexrow">
+      <div class="cell--image">
+        <img class="profile-img" src="{{item.img}}" data-edit="img" />
+      </div>
+      <div class="header-fields">
+          <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="{{localize "PBTA.Common.Name"}}"/></h1>
+      </div>
+  </header>
+
+    {{!-- Sheet Tab Navigation --}}
+  <nav class="sheet-navigation sheet-tabs tabs" data-group="primary">
+    <a class="item" data-tab="mechanics">Mechanics</a>
+    <a class="item" data-tab="specialties">Specialties</a>
+    {{#if isGM}}
+    <a class="item" data-tab="choices">Choices</a>
+    {{/if}}
+  </nav>
+
+  {{! Sheet Body }}
+  <section class='sheet-body'>
+    <div class="tab" data-group="primary" data-tab="mechanics">
+      <div class="form-group">
+        <label>{{localize "PBTA.Slug.label"}}</label>
+        <input type="text" name="system.slug" value="{{system.slug}}" data-dtype="String"/>
+      </div>
+      <div class="form-group">
+        <label>{{localize "Starscape.item.background.attributes.playbook"}}</label>
+            <select name="system.playbook" data-dtype="String">
+              {{selectOptions allPlaybooks blank="Choose one..." selected=system.playbook valueAttr="slug" labelAttr="name" }}
+            </select>
+      </div>
+      <div class="form-group">
+        <label>{{localize "Starscape.item.background.attributes.bonusStat"}}</label>
+            <select name="system.bonusStat" data-dtype="String">
+              {{selectOptions characterStats blank="Choose one..." selected=system.bonusStat labelAttr="label" }}
+            </select>
+      </div>
+    </div>
+    <div class="tab" data-group="primary" data-tab="specialties">
+      <ul class="cell__radio flexcol">
+        {{#each system.specialties.options}}
+        <div class="flexrow">
+        <label class="flexrow">
+            <input type="radio" class="attr-list" value="{{this.slug}}" name="system.specialties.value" {{checked (softEq ../primarySpecialty this.slug)}} />
+            {{this.label}}
+          </label>
+          <a data-action="delete-specialty-choice" data-target="{{this.slug}}" title="Remove">
+            <i class="fa fa-trash"></i>
+          </a>
+        </div>
+      {{/each}}
+      </ul>
+    </div>
+    {{#if isGM}}
+    <div class="tab" data-group="primary" data-tab="choices">
+      <div class="form-group">
+        <label>{{localize "Starscape.item.background.attributes.choicePrompt"}}</label>
+        <input type="text" name="system.choicePrompt" value="{{system.choicePrompt}}" data-dtype="String"/>
+      </div>
+      <div class="form-group">
+        <label>{{localize "Starscape.item.background.attributes.numChoices"}}</label>
+        <input type="number" name="system.numChoices" min="1"
+        value="{{system.numChoices}}" data-dtype="Number" />
+      </div>
+      <hr />
+      <div class="form-group">
+        <label>{{localize "Starscape.item.background.attributes.choice"}}</label>
+        <div class="item-controls">
+          <a data-action="add-background-choice">
+            <i class="fa fa-plus"></i>
+          </a>
+        </div>
+      </div>
+      {{#each system.choices}}
+        <div class="form-group flexrow">
+          <div>
+            <input type="text" name="system.choices.{{@index}}" value="{{this}}" />
+          </div>
+          <div class="flex-0"><a data-action="delete-background-choice" data-target="{{@index}}" title="Remove">
+            <i class="fa fa-trash"></i></a>
+          </div>
+        </div>
+      {{/each}}
+    </div>
+    {{/if}}
+  </section>
+</form>

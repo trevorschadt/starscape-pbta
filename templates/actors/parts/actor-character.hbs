@@ -1,0 +1,21 @@
+<div class="sheet-block">
+	<div class="flexrow">
+		<label for="name" class="block-label inline">Character</label>
+		<input class="input--title" name="name" type="text" value="{{actor.name}}" placeholder="Name"/>
+
+		
+	</div>
+				{{> "modules/starscape-pbta/templates/actors/parts/actor-playbook.hbs" }}
+	<div class="flexrow fields-with-label">
+		<label for="system.details.pronouns.value">Pronouns:</label>
+		<input name="system.details.pronouns.value" type="text" value="{{system.details.pronouns.value}}" />
+		<label for="system.details.species.value">Species:</label> 
+		<input name="system.details.species.value" type="text" value="{{system.details.species.value}}" />
+		<label for="system.details.age.value">Age:</label> 
+		<input name="system.details.age.value" type="text" value="{{system.details.age.value}}" />
+	</div>
+	<div class="flexrow fields-with-label">
+		<label for="system.details.lookAndDemeanor.value">Look &amp; Demeanor:</label>
+		<input name="system.details.lookAndDemeanor.value" type="text" value="{{system.details.lookAndDemeanor.value}}" />
+	</div>
+</div>

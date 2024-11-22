@@ -1,8 +1,11 @@
 {
     "TYPES.Item.starscape-pbta.background": "Background",
-    "TYPES.Item.starscape-pbta.skill": "Skill",
+    "TYPES.Item.starscape-pbta.skill": "Specialty",
+    "TYPES.Item.starscape-pbta.ship": "Ship",
     "Starscape":
     {
+        "ChooseOrCreate": "Choose or create your own",
+        "ViewBackground": "View Background",
         "CharacterSheets":
         {
             "rollResults":
@@ -69,7 +72,7 @@
                 "label": "Trust",
                 "levels":
                 {
-                    "0": "Distrusted (0)",
+                    "0": "Distrusted (0) - Seeing Red triggers",
                     "1": "Suspected (1)",
                     "2": "Doubted (2)",
                     "3": "Trusted (3)",
@@ -104,12 +107,134 @@
             },
             "details":
             {
-                "summary": "Summary",
-                "background": "Background",
-                "backstory": "Backstory",
+                "sectionHeaders":
+                {
+                    "character": "Character",
+                    "history": "History",
+                    "background": "Background",
+                    "backstory": "Backstory",
+                    "connections": "Connections",
+                    "seeingRed": "Seeing Red",
+                    "stellarMove": "Stellar Move",
+                    "shipCustomization": "Ship Customization",
+                    "personalDirective": "Personal Directive"
+                },
+                "homeworld": "Homeworld",
+                "notableFeature": "Notable Feature",
+                "impactOnYou": "Impact On You",
                 "shipCustomization": "Ship Customization",
                 "seeingRed": "Seeing Red",
-                "connections": "Connections"
+                "stellarMove": "Stellar Move",
+                "connections": "Connections",
+                "connectionsLabel": "Fill in with the names of other PCs. That PC gets the + or - Trust.",
+                "personalDirectiveLabel": "Session goal about interaction with another PC."
+            },
+            "description":
+            {
+                "errors":
+                {
+                    "needsPlaybook": "Please select a playbook.",
+                    "needsBackground": "Please select a background applicable to your playbook."
+                }
+            }
+        },
+        "Ship":
+        {
+            "Name": "Name of the Ship",
+            "Stats":
+            {
+                "Label": "Systems",
+                "Instructions": "<ul><li>The current state of your ship's abilities.</li><li>Start with 2 damage boxes for each system. Add more through Upgrades, max 4 Boxes.</li><li>Roll 1d6 to randomly select damaged sections. <strong>If all boxes are filled, that system is inoperable and can't be used.</strong></li></ul>",
+                "Communications": "Communications",
+                "Defense": "Defense",
+                "LifeSupport": "Life Support",
+                "Propulsion": "Propulsion",
+                "Navigation": "Navigation",
+                "Weapons": "Weapons",
+                "Damage": "Take Damage",
+                "Repair": "Repair Damage"
+            },
+            "Attributes":
+            {
+                "Description":
+                {
+                    "Label": "Ship Description",
+                    "Instructions": "(Choose 3)"
+                },
+                "Captain":
+                {
+                    "Label": "Captain",
+                    "Instructions": "(Pick One)",
+                    "Types":
+                    {
+                        "PC_Captain": "PC Captain",
+                        "NPC_Captain": "NPC Captain",
+                        "No_Captain": "No Captain"
+                    },
+                    "Name": "Name",
+                    "Details": "Details"
+                },
+                "Crew":
+                {
+                    "Label": "Crew Size",
+                    "Instructions": "(pick one)",
+                    "small": "Small - only the PCs",
+                    "medium": "Medium - 2-19 NPCs",
+                    "large": "Large - 20-99 NPCs",
+                    "massive": "Massive - 100-1,000 NPCs"
+                },
+                "Propulsion":
+                {
+                    "Label": "Propulsion",
+                    "Instructions": "(pick one to start)"
+                },
+                "Defenses":
+                {
+                    "Label": "Defenses",
+                    "Instructions": "(pick one to start)"
+                },
+                "Weapons":
+                {
+                    "Label": "Weapons",
+                    "Instructions": "(pick one to start)"
+                },
+                "Quirks":
+                {
+                    "Label": "Quirks",
+                    "Instructions": "(one given, pick another)"
+                },
+                "Areas": "Areas",
+                "PlaybookShipCustomizations": "Playbook Ship Customizations",
+                "Investments":
+                {
+                    "Label": "Investments",
+                    "Instructions":
+                    {
+                        "MakeAnInvestmentWhen": "Make an investment when you complete a mission or job, with advancements, and as moves specify.",
+                        "SpendAnInvestmentToRepair": "Spend an investment to repair one System instantly. Describe what happens.",
+                        "ChooseAnUpgradeWhen": "Choose one Upgrade each time the investment bar fills up. Create a narrative about how the upgrade happens and how they change the ship's look and personality."
+                    },
+                    "GainAnUpgrade": "Gain an Upgrade",
+                    "ResetInvestments": "Reset Investments"
+                },
+                "Upgrades":
+                {
+                    "label": "Upgrades",
+                    "OnlyAfterN": "These may be chosen after {n} Ship Upgrades:",
+                    "addNewArea": "Add a new Area to the Ship",
+                    "addOtherCust": "Add a Ship Customization from an unused Playbook",
+                    "upgradeCommunications": "Upgrade Communications (+1 damage box)",
+                    "upgradeDefense": "Upgrade Defense (+1 damage box)",
+                    "upgradeLifeSupport": "Upgrade Life Support (+1 damage box)",
+                    "upgradePropulsion": "Upgrade Propulsion (+1 damage box)",
+                    "upgradeNavigation": "Upgrade Navigation (+1 damage box)",
+                    "upgradeWeapons": "Upgrade Weapons (+1 damage box)",
+                    "addDefense": "Add Defense Type (+1 to Defense and Life Support)",
+                    "addWeapons": "Add Weapons Type (+1 to Weapons and Propulsion)",
+                    "boostElectronics": "Boost Electronics (+1 to Communications and Navigation)",
+                    "addOtherShipBenefit": "Choose an additional Benefit from another Ship Model",
+                    "removeDrawback": "Remove the ship's Drawback"
+                }
             }
         },
         "moveTypes":
@@ -125,6 +250,15 @@
         },
         "item":
         {
+            "playbook":
+            {
+                "notableFeatureOptions": "Homeworld Notable Feature Options",
+                "shipCustomizationOptions": "Ship Customization Options",
+                "summary": "Summary",
+                "backstoryPrompt": "Backstory Prompt",
+                "startingMoves": "Starting Moves",
+                "PlaybookMoveIcon": "Playbook Move Icon"
+            },
             "background":
             {
                 "description": "A more focused history of a character's playbook",
@@ -132,8 +266,19 @@
                 {
                     "bonusStat": "Bonus to Stat:",
                     "choicePrompt": "Choice Prompt",
-                    "choice": "Choices"
+                    "numChoices": "Number of choice categories",
+                    "choice": "Choices",
+                    "playbook": "Playbook"
                 }
+            },
+            "skill":
+            {
+                "name": "Specialty",
+                "plural": "Specialties",
+                "description": "Description",
+                "choose-1": "Choose 1:",
+                "choose-2": "Choose 2:",
+                "choose-3": "Choose 3:"
             }
         }
     }

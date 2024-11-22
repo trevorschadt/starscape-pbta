@@ -1,0 +1,9 @@
+<div class="sheet-block">
+	<div class="flexrow">
+		<label class="block-label">{{localize 'Starscape.CharacterSheets.details.sectionHeaders.connections'}}</label>
+	</div>
+	<div class="flexrow"><label>{{localize 'Starscape.CharacterSheets.details.connectionsLabel'}}</label></div>
+	<div class="flexrow">
+      {{editor system.details.connections.value target="system.details.connections.value" button=true owner=owner editable=editable engine="prosemirror" collaborate=false}}
+	</div>
+</div>

@@ -1,0 +1,23 @@
+<div class="sheet-block">
+	<div class="flexrow">
+		<label class="block-label">{{localize 'Starscape.CharacterSheets.details.sectionHeaders.personalDirective'}}</label>
+	</div>
+	<div class="flexrow"><label>{{localize 'Starscape.CharacterSheets.details.personalDirectiveLabel'}}</label></div>
+	<div class="form-group">
+      {{editor system.details.backstory.value target="system.details.backstory.value" button=true owner=owner editable=editable engine="prosemirror" collaborate=false}}
+	</div>
+	<!--
+	<div class="flexrow fields-with-label">
+		<label for="system.details.homeworld.value">Homeworld:</label>
+		<input name="system.details.homeworld.value" type="text" value="{{system.details.homeworld.value}}" placeholder="Choose or create your own" />
+	</div>
+	<div class="flexrow fields-with-label">
+		<label for="system.details.notableFeatureWriteIn.value">Notable Feature:</label>
+		<input name="system.details.notableFeatureWriteIn.value" type="text" value="{{system.details.notableFeatureWriteIn.value}}" placeholder="Choose or create your own" />
+	</div>
+	<div class="flexrow fields-with-label">
+		<label for="system.details.homeworldImpact.value">Impact on You:</label>
+		<input name="system.details.homeworldImpact.value" type="text" value="{{system.details.homeworldImpact.value}}" />
+	</div>
+	-->
+</div>

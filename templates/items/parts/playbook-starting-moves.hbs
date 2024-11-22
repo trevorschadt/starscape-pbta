@@ -1,0 +1,63 @@
+<ol class="choicesets">
+
+	{{#each choicesByAdvancement as | advancement |}}
+	<li>
+		<div class="flexrow">
+			<h1>
+				{{localize "Starscape.item.playbook.startingMoves"}}
+			</h1>
+			<div class="cell--image">
+				<img class="profile-img" src="{{../system.moveImg}}" data-edit="system.moveImg" />
+			</div>
+		</div>
+		{{#each advancement as | grant |}}
+		<ol class="choiceset" data-id="{{@key}}">
+			{{#each grant}}
+
+			<div class="form-group">
+				<label>{{localize "PBTA.Title"}}</label>
+				<div class="form-fields">
+					<input type="text" name="system.choiceSets.{{@../key}}.title" value="{{this.title}}" />
+					<div class="item-controls">
+						<a type="button" data-action="delete-choiceset">
+							<i class="fa fa-trash"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+			<hr>
+			{{#if this.choices.length}}
+			<li class="form-group items-field">
+				<div>{{localize "DOCUMENT.Items"}}</div>
+			</li>
+			{{/if}}
+			{{#each this.choices}}
+			<li class="form-group choiceset-item" data-uuid="{{this.uuid}}" data-id="{{@index}}">
+				<div class="item flexrow">
+					<img src="{{this.img}}" height="32" width="32">
+					<label>{{this.name}}</label>
+				</div>
+				<input type="text" name="system.choiceSets.{{@../../key}}.choices.{{@index}}.uuid" value="{{this.uuid}}" hidden>
+				<input type="text" name="system.choiceSets.{{@../../key}}.choices.{{@index}}.img" value="{{this.img}}" hidden>
+				<input type="text" name="system.choiceSets.{{@../../key}}.choices.{{@index}}.name" value="{{this.name}}" hidden>
+				<input type="checkbox" name="system.choiceSets.{{@../../key}}.choices.{{@index}}.granted" {{checked this.granted}} hidden>
+				<div>
+					<label {{hidden (not ../grantOn)}}>Advancement</label>
+					<input type="number" name="system.choiceSets.{{@../../key}}.choices.{{@index}}.advancement" value="{{this.advancement}}" {{hidden (not ../grantOn)}}>
+				</div>
+
+				<div class="item-controls">
+					<a data-action="delete-item">
+						<i class="fa fa-trash"></i>
+					</a>
+				</div>
+			</li>
+			<hr>
+			{{/each}}
+			<div class="drop-zone">{{localize "PBTA.DropItemsHere"}}</div>
+			{{/each}}
+		</ol>
+		{{/each}}
+	</li>
+	{{/each}}
+</ol>

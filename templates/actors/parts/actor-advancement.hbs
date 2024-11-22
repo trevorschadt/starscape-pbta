@@ -1,0 +1,20 @@
+				{{#unless (ne sheetSettings.hideAdvancement "none")}}
+				<label for="system.advancements">Advancements:</label>
+				<input class="input--title advancement"
+					type="number"
+					name="system.advancements"
+					value="{{system.advancements}}"
+					min="0"
+					data-tooltip="PBTA.Advancements"
+					data-tooltip-direction="UP"
+				>
+				{{/unless}}
+				{{#unless (eq sheetSettings.hideAdvancement "both")}}
+				<div class="advancement {{#if canAdvance}}active{{/if}}"
+					data-action="advancement"
+					data-tooltip="PBTA.Advance"
+					data-tooltip-direction="UP"
+				>
+					<i class="fas fa-arrow-up"></i>
+				</div>
+				{{/unless}}

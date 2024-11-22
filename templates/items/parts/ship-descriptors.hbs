@@ -1,0 +1,22 @@
+<div class="sheet-block flexcol ship-descriptors">
+  <div class="flexrow flex-0">
+    <label class="block-label flex-0">{{localize 'Starscape.Ship.Attributes.Description.Label'}}</label>
+   <label class="block-sublabel">{{localize 'Starscape.Ship.Attributes.Description.Instructions'}}</label>
+  </div>
+  <div class="flexrow">
+    {{#each (splitArray system.attributes.description 3)}}
+    <div class="flexcol">
+      {{#each this}}
+        {{#if this.item}}
+        <label data-action="toggle-ship-descriptor" data-target="{{this.rootIndex}}">
+          <input type="checkbox" {{checked this.item.selected}}>
+          {{this.item.name}}
+        </label>
+        {{else}}
+        <label></label>
+        {{/if}}
+      {{/each}}
+    </div>
+    {{/each}}
+  </div>
+</div>

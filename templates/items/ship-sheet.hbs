@@ -1,0 +1,47 @@
+<form class='{{cssClass}} item-form flexcol' autocomplete='off'>
+
+<header class="sheet-header flexrow">
+      <div class="cell--image">
+        <img class="profile-img" src="{{item.img}}" data-edit="img" />
+      </div>
+      <div class="header-fields flex-2">
+          <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="{{localize "PBTA.Common.Name"}}"/></h1>
+
+      </div>
+      {{#if system.description}}
+      <div><h1 class="charname">{{system.description}}</h1></div>
+      {{else}}
+      <div class="flexrow">
+        <select class='select-ship-type' data-action='select-ship-type'>
+          <option value="" selected>Choose a ship type...</option>
+          <option value="flagship">The Flagship</option> 
+          <option value="behemoth">The Behemoth</option> 
+          <option value="lightFreighter">The Light Freighter</option> 
+          <option value="throwback">The Throwback</option> 
+          <option value="livingBeing">The Living Being</option> 
+        </select>
+      </div>
+      {{/if}}
+  </header>
+  <section class="sheet-body">
+    <div class="flexrow">
+      <div class="flexcol sidebar">
+        {{> "modules/starscape-pbta/templates/items/parts/ship-descriptors.hbs"}}
+      <div class="sheet-block flexcol">
+        {{> "modules/starscape-pbta/templates/items/parts/ship-captain.hbs"}}
+        {{> "modules/starscape-pbta/templates/items/parts/ship-crewsize.hbs"}}
+        {{> "modules/starscape-pbta/templates/items/parts/ship-propulsion.hbs"}}
+        {{> "modules/starscape-pbta/templates/items/parts/ship-defenses.hbs"}}
+        {{> "modules/starscape-pbta/templates/items/parts/ship-weapons.hbs"}}
+        {{> "modules/starscape-pbta/templates/items/parts/ship-quirks.hbs"}}
+      </div>
+    </div>
+    <div class="flexcol flex-2">
+
+      {{> "modules/starscape-pbta/templates/items/parts/ship-systems.hbs"}}
+      {{> "modules/starscape-pbta/templates/items/parts/ship-areas.hbs"}}
+      {{> "modules/starscape-pbta/templates/items/parts/ship-investments.hbs"}}
+      {{> "modules/starscape-pbta/templates/items/parts/ship-upgrades.hbs"}}
+    </div>
+  </section>
+</form>

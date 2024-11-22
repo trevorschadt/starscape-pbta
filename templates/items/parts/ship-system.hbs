@@ -1,0 +1,16 @@
+<div>
+  <label>
+    {{this.label}}
+    <a data-action="change-stat" data-target="{{this.name}}"  title="{{localize 'Starscape.Ship.Stats.Damage'}}" data-change="1" {{disabled (eq this.value this.max)}}>
+    <i class="fa-solid fa-burst"></i>
+    </a>
+    <a data-action="change-stat" data-target="{{this.name}}" title="{{localize 'Starscape.Ship.Stats.Repair'}}" data-change="-1" {{disabled (eq this.value 0)}}>
+    <i class="fa-solid fa-wrench"></i>
+    </a>
+  </label>
+</div>
+<div class="cell__clock flexrow">
+  {{#times 4}}
+  <input type="radio" class="stat-damage readonly" data-name="{{../this.label}}" data-step="{{@index}}" readonly {{checked (gt ../this.value @index)}} {{disabled (lte ../this.max @index)}}>
+  {{/times}}
+</div>

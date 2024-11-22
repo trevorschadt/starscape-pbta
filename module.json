@@ -42,14 +42,16 @@
         {
             "lang": "en",
             "name": "English",
-            "path": "lang/en.json"
+            "path": "lang/en.json",
+            "flags":
+            {}
         }
     ],
     "esmodules":
     [
-        "scripts/starscape.mjs",
-        "scripts/helpers/crash.mjs",
-        "scripts/helpers/advance.mjs"
+        "module/starscape.mjs",
+        "module/helpers/crash.mjs",
+        "module/helpers/advance.mjs"
     ],
     "styles":
     [
@@ -62,6 +64,8 @@
             "background":
             {},
             "skill":
+            {},
+            "ship":
             {}
         }
     },
@@ -120,6 +124,18 @@
             "label": "Starscape Rollable Tables",
             "path": "packs/starscape-rollable-tables",
             "type": "RollTable",
+            "system": "pbta",
+            "ownership":
+            {
+                "PLAYER": "OBSERVER",
+                "ASSISTANT": "OWNER"
+            }
+        },
+        {
+            "name": "starscape-skills",
+            "label": "Starscape Skills",
+            "path": "packs/starscape-skills",
+            "type": "Item",
             "ownership":
             {
                 "PLAYER": "OBSERVER",

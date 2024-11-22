@@ -1,0 +1,15 @@
+  <div class="sheet-block flexcol upgrades">
+    {{~> 'modules/starscape-pbta/templates/common-parts/sheet-block-label.hbs' label='Starscape.Ship.Attributes.Upgrades.label' ~}}
+    <div class="flexrow">
+      {{#each system.attributes.upgrades as |value key|}}
+        <div class="flexcol">
+          {{#if (gt key 0)}}
+          <div class="flex-0 upgrade-column-header">{{localize 'Starscape.Ship.Attributes.Upgrades.OnlyAfterN' n=key}}</div>
+          {{/if}}
+          <div class="flexcol">
+            {{> 'modules/starscape-pbta/templates/common-parts/multi-choice-of-object-options.hbs' list=value action='toggle-ship-upgrade'}}
+            </div>
+        </div>
+      {{/each}}
+    </div>
+  </div>

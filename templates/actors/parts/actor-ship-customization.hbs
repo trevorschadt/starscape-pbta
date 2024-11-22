@@ -1,0 +1,13 @@
+<div class="sheet-block">
+	<div class="flexrow">
+		<label class="block-label">{{localize 'Starscape.CharacterSheets.details.sectionHeaders.shipCustomization'}}</label>
+	</div>
+	{{#each playbook.system.shipCustomizationOptions}}
+	<div class="flexrow">
+		<label class="flexrow list-item">
+			<input type="checkbox" data-action='toggle-ship-customization-option' data-target='{{@index}}' {{checked (ifIn @index ../system.shipCustomizationChoices)}} />
+			{{this}}
+		</label>
+	</div>
+	{{/each}}
+</div>

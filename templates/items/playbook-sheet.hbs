@@ -1,0 +1,117 @@
+<form class="{{cssClass}} class item-form flexcol" autocomplete="off">
+  <header class="sheet-header flexrow">
+    <div class="cell--image">
+      <img class="profile-img" src="{{item.img}}" data-edit="img" />
+    </div>
+    <div class="header-fields">
+      <h1 class="charname"><input name="name" type="text" value="{{item.name}}" placeholder="{{localize 'PBTA.Common.Name'}}" /></h1>
+    </div>
+  </header>
+
+  {{!-- Sheet Tab Navigation --}}
+  <nav class="sheet-navigation sheet-tabs tabs" data-group="primary">
+    <a class="item" data-tab="description">{{localize "PBTA.Common.Description" }}</a>
+    <!-- <a class="item" data-tab="moves">{{localize "PBTA.Moves" }}</a> -->
+    {{#if isGM}}
+    <a class="item" data-tab="details">Mechanics</a>
+    <a class="item" data-tab="attributes">Details</a>
+    <a class="item" data-tab="item-grants">{{ localize "PBTA.ItemGrants" }}</a>
+    {{/if}}
+  </nav>
+
+  {{!-- Sheet Body --}}
+  <section class="sheet-body">
+
+    {{!-- Description Tab --}}
+    <div class="tab" data-group="primary" data-tab="description">
+      {{editor enriched.description target="system.description" button=true owner=owner editable=editable engine="prosemirror" collaborate=false}}
+    </div>
+
+    {{#if isGM}}
+    {{!-- Mechanics Tab --}}
+    <div class="tab" data-group="primary" data-tab="details">
+      <div class="form-group">
+        <label class="control-label">{{localize "PBTA.Slug.label" }}</label>
+        <div class="form-fields">
+          <input type="text" name='system.slug' value='{{ system.slug }}'/>
+          <div class="item-controls">
+            <a class="regenerate-slug" data-tooltip="PBTA.Slug.tooltip">
+              <i class="fa-solid fa-arrows-rotate"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      {{#if (gt (objLen actorTypes) 1)}}
+      <div class="form-group">
+        <label>{{localize "PBTA.ActorType"}}</label>
+        <select name="system.actorType">
+          {{selectOptions actorTypes selected=system.actorType labelAttr="label" sort=true}}
+        </select>
+      </div>
+      {{/if}}
+      {{#if (gt (objLen system.stats) 0)}}
+      <h3>{{ localize "PBTA.Stat.labelPl" }}</h3>
+      {{#each system.stats}}
+      <div class="form-group">
+        <label>{{ this.label }}</label>
+        <input type="number" name='{{concat "system.stats." @key ".value"}}' value='{{ this.value }}' />
+      </div>
+      {{/each}}
+      <div class="form-group">
+        <label>{{ localize "PBTA.Details" }}</label>
+        <input type="text" name='system.statsDetail' value='{{ system.statsDetail }}' />
+      </div>
+      {{/if}}
+    </div>
+
+    {{!-- Attributes Tab --}}
+    <div class="tab" data-group="primary" data-tab="attributes">
+      <div class="form-group">
+        <label>{{ localize "Starscape.item.playbook.summary" }}</label>
+        <input type="text" name='system.summary' value='{{ system.summary }}' />
+      </div>
+      <div class="form-group">
+        <label>{{ localize "Starscape.item.playbook.backstoryPrompt" }}</label>
+        <input type="text" name='system.backstoryPrompt' value='{{ system.backstoryPrompt }}' />
+      </div>
+      <div class="form-group">
+        <label>{{ localize "Starscape.item.playbook.shipCustomizationOptions" }}</label>
+        <div class="flexcol">
+        {{#each system.shipCustomizationOptions as |option key|}}
+        <input type="text" name='system.shipCustomizationOptions.{{key}}' value='{{ option }}' />
+        {{/each}}
+        </div>
+      </div>
+      <div class="form-group">
+        <label>{{ localize "Starscape.item.playbook.notableFeatureOptions" }}</label>
+        <div class="flexcol">
+        {{#each system.homeworldFeatureOptions as |option key|}}
+        <input type="text" name='system.homeworldFeatureOptions.{{key}}' value='{{ option }}' />
+        {{/each}}
+        </div>
+      </div>
+      <div class="form-group">
+        <label>{{ localize "Starscape.CharacterSheets.details.seeingRed" }}</label>
+{{editor enriched.seeingRed target="system.seeingRed" button=true owner=owner editable=editable engine="prosemirror" collaborate=false}}
+      </div>
+      <div class="form-group">
+        <label>{{ localize "Starscape.CharacterSheets.details.stellarMove" }}</label>
+{{editor enriched.stellarMove target="system.stellarMove" button=true owner=owner editable=editable engine="prosemirror" collaborate=false}}
+      </div>
+      <div class="form-group">
+        <label>{{ localize "Starscape.CharacterSheets.details.connections" }}</label>
+{{editor enriched.connections target="system.connections" button=true owner=owner editable=editable engine="prosemirror" collaborate=false}}
+      </div>
+    </div>
+
+    {{!-- Item Grants Tab --}}
+    <div class="tab" data-group="primary" data-tab="item-grants">
+    {{#if newMoves}}
+          {{> "modules/starscape-pbta/templates/items/parts/playbook-starting-moves.hbs" }}
+    {{else}}
+      {{> "pbta.playbook-choicesets"}}
+    {{/if}}
+    </div>
+    {{/if}}
+  </section>
+</form>

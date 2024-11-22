@@ -1,9 +1,300 @@
-.starscape.sheet .sheet-attributes .cell--stats .stat {
-	flex-basis: 19%;
+@import url('https://fonts.googleapis.com/css?family=Squada+One&display=swap');
+
+input[readonly] {
+	pointer-events: none;
 }
-.starscape.sheet .sheet-attributes .cell--stats .stat.crashed {
+
+a[disabled] {
+	opacity: 30%;
+}
+.starscape.sheet label {
+	font-family: 'Squada One';
+	font-size: var(--font-size-18);
+}
+
+.starscape.sheet.ship label {
+	font-weight: normal;
+}
+
+.starscape.sheet .cell--image {
+	background: unset;
+	flex: 1;
+}
+.starscape.sheet .cell--image img {
+	max-height: unset;
+}
+
+.starscape.sheet .sheet-attributes .cell--stats .stat {
+	flex: 0 0 18%;
+	background: rgba(0, 0, 0, 0);
+	color: black;
+}
+
+.starscape.sheet .sheet-attributes .cell--stats .stat:hover {
+	background: rgba(0, 0, 0, 0);
+}
+
+.starscape.sheet .sheet-attributes .cell--stats .stat .roll-box {
+	flex: 0;
+	background: #4878a8;
+	justify-items: center;
+	align-items: center;
+	padding: 1em;
+	transition: all ease-in-out .25s;
+	border-radius: 3em;
+}
+
+.starscape.sheet .sheet-attributes .cell--stats .stat .roll-box:hover {
+	background: #6599ce;
+}
+
+.starscape.sheet .sheet-attributes .cell--stats .stat .condition {
+	align-items: center;
+	font-size: var(--font-size-16);
+}
+
+.starscape.sheet input[type="checkbox"] {
+	height: 1rem;
+}
+
+.starscape.sheet .sheet-attributes .cell--stats .stat .stat-value {
+	flex: 0;
+	max-width: 50%;
+}
+
+.starscape .flex-4 {
+	flex: 4 !important;
+}
+
+.starscape .flex-3 {
+	flex: 3 !important;
+}
+
+.starscape .flex-2 {
+	flex: 2 !important;
+}
+
+.starscape .flex-1 {
+	flex: 1 !important;
+}
+
+.starscape .flex-0 {
+	flex: 0 !important;
+}
+
+.starscape .sheet-specialties div {
+	flex: 0;
+}
+
+.starscape .sheet-specialties .specialty {
+	font-size: var(--font-size-16);
+}
+
+.starscape.sheet .sheet-attributes .cell--stats .stat.crashed .roll-box {
 	background: #800000;
 }
-.starscape.sheet .sheet-attributes .cell--stats .stat.crashed:hover {
+
+.starscape.sheet .sheet-attributes .cell--stats .stat.crashed .roll-box:hover,
+.starscape.sheet .sheet-attributes .cell--stats .stat.crashed .roll-box input:hover {
 	background: #aa6666;
+	cursor: pointer;
+}
+
+.starscape.sheet .sheet-header__fields .sheet-playbook :has(i) {
+	height: 32px;
+}
+
+.starscape.sheet.ship .sidebar {
+	flex-basis: 5%;
+}
+
+.starscape.sheet .centered {
+	align-self: center;
+}
+.starscape.sheet .editor {
+	min-height: 2rem;
+}
+
+.starscape.sheet .select-ship-type {
+
+}
+
+.starscape.sheet .attributes-quirks label:not(.block-label),
+.starscape.sheet .upgrades label:not(.block-label) {
+	font-size: var(--font-size-14);
+}
+
+.starscape.sheet .investments .dialog-button {
+	white-space: nowrap;
+}
+
+.starscape.sheet.ship .upgrades .upgrade-column-header {
+	font-size: var(--font-size-18);
+	font-family: 'Squada One';
+	text-decoration-line: underline;
+}
+
+.starscape.sheet label:has(input[disabled]) {
+	pointer-events: none;
+	opacity: 50%;
+}
+
+.starscape.sheet .sheet-block {
+	border: 1px solid black;
+	border-radius: 5px;
+	padding: 5px;
+	margin: 5px;
+	gap: 5px;
+}
+
+.starscape .editor-content {
+	font-family: 'Roboto';
+}
+
+.starscape.sheet .sheet-block .editor-content {
+	position: unset
+}
+
+.starscape.sheet .sheet-header__fields .charplaybook {
+	flex: 4;
+}
+
+.starscape.sheet .sheet-header__fields .playbook-summary {
+	font-size: large;
+	font-family: 'Squada One';
+	justify-content: center;
+}
+
+.starscape.sheet .sheet-header__fields label[for="system.advancements"],
+.starscape.sheet .flexrow.fields-with-label label
+ {
+	display: flex;
+	align-items: center;
+	flex: 0;
+	padding: 0 1em;
+	white-space: nowrap;
+}
+
+.starscape.sheet .flexrow.fields-with-label label:first-of-type {
+	padding-left: 0;
+}
+
+.starscape.sheet .flexrow.fields-with-label {
+	padding: 2px 0;
+}
+
+.starscape.sheet .flexrow.fields-with-label input[type="radio"] {
+	flex: 0;
+}
+
+.starscape.sheet.ship .sheet-block.systems {
+	flex-grow: 0 !important;
+	gap: 5px;
+}
+
+.starscape.sheet .sheet-block .block-label {
+	font-family: "Squada One";
+	font-size: 200%;
+	flex: 0 !important;
+	text-transform: uppercase;
+	white-space: nowrap;
+	font-weight: bold;
+}
+
+.starscape.sheet.ship .sheet-block div:has(.block-label) {
+	border-bottom: 1px solid black;
+	margin-bottom: 5px;
+}
+.starscape.sheet.ship .sheet-block div:has(.block-label):not-first-of-type {
+	margin-top: 5px;
+}
+
+.starscape.sheet .sheet-block .block-sublabel {
+	font-family: "Squada One";
+	text-transform: uppercase;
+	align-content: center;
+	padding-left: 1rem;
+}
+
+.starscape.sheet .sheet-block .block-label.inline {
+	flex-grow: 0.5;
+}
+
+.starscape.sheet .sheet-tab .flexrow,
+.starscape.sheet .view-playbook .flexrow,
+.systems > .flexrow
+{
+	gap: 10px;
+}
+
+.starscape.sheet .cell__clock {
+	padding-bottom: 5px;
+}
+
+.starscape.sheet .cell--trust label {
+	font-size: var(--font-size-16);
+}
+
+.starscape.sheet .sheet-header__fields .sheet-playbook .charplaybook,
+.starscape.sheet .sheet-header__fields .sheet-playbook .charbackground {
+	width: 100%;
+	border-left: none;
+	border-right: none;
+	border-radius: 0;
+	height: 32px;
+	line-height: 32px;
+	flex: 4;
+}
+
+.starscape.sheet .sheet-header__fields .sheet-playbook .view-background {
+	flex: 0 0 auto;
+	border-radius: 4px 0 0 4px;
+	margin-right: 0;
+	overflow: hidden;
+	background: #787878;
+	color: #fff;
+	width: 32px;
+	text-align: center;
+	opacity: .5;
+	transition: all ease-in-out .25s;
+	padding: 6px;
+}
+
+.starscape.sheet .sheet-header__fields .sheet-playbook .view-background.active {
+	cursor: pointer;
+}
+
+.starscape.sheet .sheet-header__fields .sheet-playbook .view-background.active:hover {
+	opacity: 1;
+}
+
+.starscape.sheet label.flexrow.list-item {
+	font-size: var(--font-size-14);
+	align-items: center;
+}
+
+.starscape.sheet .profile-img.move-img {
+	max-width: 5rem;
+}
+
+.starscape.sheet .sheet-tabs.tabs img {
+    max-height: 32px;
+}
+
+.systems .flexcol .cell__clock:not(:last-child) {
+	margin-bottom: .75rem;
+}
+
+.area:has(input[type=number]) {
+	gap: 1rem;
+}
+
+.area:has(input[type=number]) label {
+	flex: 0;
+	white-space: nowrap;
+}
+
+.area input[type=number] {
+	height: unset;
+	max-width: 3rem;
 }

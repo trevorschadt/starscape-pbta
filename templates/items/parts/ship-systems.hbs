@@ -1,0 +1,20 @@
+      <div class="sheet-block flexcol systems">
+        <div class="flexrow">
+          <label class="block-label">{{localize 'Starscape.Ship.Stats.Label'}}</label>
+        </div>
+        <div class="flexrow">
+          <div class="flexcol">
+            {{> "modules/starscape-pbta/templates/items/parts/ship-system.hbs" system.stats.communications}}
+            {{> "modules/starscape-pbta/templates/items/parts/ship-system.hbs" system.stats.defense}}
+            {{> "modules/starscape-pbta/templates/items/parts/ship-system.hbs" system.stats.lifeSupport}}
+          </div>
+          <div class="flexcol">
+            {{> "modules/starscape-pbta/templates/items/parts/ship-system.hbs" system.stats.propulsion}}
+            {{> "modules/starscape-pbta/templates/items/parts/ship-system.hbs" system.stats.navigation}}
+            {{> "modules/starscape-pbta/templates/items/parts/ship-system.hbs" system.stats.weapons}}
+          </div>
+          <div class="flex-2">
+            {{& localize "Starscape.Ship.Stats.Instructions"}}
+          </div>
+        </div>
+      </div>

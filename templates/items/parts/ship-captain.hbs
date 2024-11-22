@@ -1,0 +1,14 @@
+<section class='attributes-captain'>
+  {{~> 'modules/starscape-pbta/templates/common-parts/sheet-block-label.hbs' label='Starscape.Ship.Attributes.Captain.Label' sublabel='Starscape.Ship.Attributes.Captain.Instructions' ~}}
+  <div class="flexrow">
+    {{~> 'modules/starscape-pbta/templates/common-parts/choice-of-string-options.hbs' system.attributes.captain attrPath="system.attributes.captain.value" ~}}
+  </div>
+  <div class="form-group">
+    <label class="flex-1">{{localize 'Starscape.Ship.Attributes.Captain.Name'}}</label>
+    <input type="text" name="system.attributes.captain.name" class="flex-4" value="{{system.attributes.captain.name}}"/>
+  </div>
+  <div class="form-group">
+    <label class="flex-1">{{localize 'Starscape.Ship.Attributes.Captain.Details'}}</label>
+    <input type="text" name="system.attributes.captain.details" class="flex-4" value="{{system.attributes.captain.details}}"/>
+  </div>
+</section>
